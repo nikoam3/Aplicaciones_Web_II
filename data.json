@@ -1,0 +1,352 @@
+[
+    {
+        "nombre": "The Shawshank Redemption",
+        "duracion": 142,
+        "clasificacion": 5,
+        "genero": "Drama",
+        "estreno": "1994-09-23"
+    },
+    {
+        "nombre": "The Godfather",
+        "duracion": 175,
+        "clasificacion": 5,
+        "genero": "Crimen",
+        "estreno": "1972-03-24"
+    },
+    {
+        "nombre": "Pulp Fiction",
+        "duracion": 154,
+        "clasificacion": 4,
+        "genero": "Crimen",
+        "estreno": "1994-10-14"
+    },
+    {
+        "nombre": "Inception",
+        "duracion": 148,
+        "clasificacion": 4,
+        "genero": "Ciencia ficción",
+        "estreno": "2010-07-16"
+    },
+    {
+        "nombre": "The Dark Knight",
+        "duracion": 152,
+        "clasificacion": 5,
+        "genero": "Acción",
+        "estreno": "2008-07-18"
+    },
+    {
+        "nombre": "Plan 9 from Outer Space",
+        "duracion": 79,
+        "clasificacion": 0,
+        "genero": "Ciencia ficción",
+        "estreno": "1959-07-22"
+    },
+    {
+        "nombre": "The Room",
+        "duracion": 99,
+        "clasificacion": 1,
+        "genero": "Drama",
+        "estreno": "2003-06-27"
+    },
+    {
+        "nombre": "Titanic",
+        "duracion": 195,
+        "clasificacion": 4,
+        "genero": "Romance",
+        "estreno": "1997-12-19"
+    },
+    {
+        "nombre": "Schindler's List",
+        "duracion": 195,
+        "clasificacion": 5,
+        "genero": "Drama",
+        "estreno": "1993-12-15"
+    },
+    {
+        "nombre": "The Lion King",
+        "duracion": 88,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "1994-06-24"
+    },
+    {
+        "nombre": "Avatar",
+        "duracion": 162,
+        "clasificacion": 4,
+        "genero": "Ciencia ficción",
+        "estreno": "2009-12-18"
+    },
+    {
+        "nombre": "Jurassic Park",
+        "duracion": 127,
+        "clasificacion": 4,
+        "genero": "Aventura",
+        "estreno": "1993-06-11"
+    },
+    {
+        "nombre": "The Empire Strikes Back",
+        "duracion": 124,
+        "clasificacion": 5,
+        "genero": "Ciencia ficción",
+        "estreno": "1980-05-21"
+    },
+    {
+        "nombre": "Sharknado",
+        "duracion": 86,
+        "clasificacion": 2,
+        "genero": "Ciencia ficción",
+        "estreno": "2013-07-11"
+    },
+    {
+        "nombre": "The Lord of the Rings: The Fellowship of the Ring",
+        "duracion": 178,
+        "clasificacion": 5,
+        "genero": "Fantasía",
+        "estreno": "2001-12-19"
+    },
+    {
+        "nombre": "Gladiator",
+        "duracion": 155,
+        "clasificacion": 4,
+        "genero": "Acción",
+        "estreno": "2000-05-05"
+    },
+    {
+        "nombre": "E.T. the Extra-Terrestrial",
+        "duracion": 115,
+        "clasificacion": 4,
+        "genero": "Ciencia ficción",
+        "estreno": "1982-06-11"
+    },
+    {
+        "nombre": "The Silence of the Lambs",
+        "duracion": 118,
+        "clasificacion": 5,
+        "genero": "Suspense",
+        "estreno": "1991-02-14"
+    },
+    {
+        "nombre": "Back to the Future",
+        "duracion": 116,
+        "clasificacion": 4,
+        "genero": "Ciencia ficción",
+        "estreno": "1985-07-03"
+    },
+    {
+        "nombre": "The Avengers",
+        "duracion": 143,
+        "clasificacion": 4,
+        "genero": "Acción",
+        "estreno": "2012-05-04"
+    },
+    {
+        "nombre": "Good Will Hunting",
+        "duracion": 126,
+        "clasificacion": 4,
+        "genero": "Drama",
+        "estreno": "1997-12-05"
+    },
+    {
+        "nombre": "The Departed",
+        "duracion": 151,
+        "clasificacion": 4,
+        "genero": "Crimen",
+        "estreno": "2006-10-06"
+    },
+    {
+        "nombre": "Finding Nemo",
+        "duracion": 100,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "2003-05-30"
+    },
+    {
+        "nombre": "The Incredibles",
+        "duracion": 115,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "2004-11-05"
+    },
+    {
+        "nombre": "Interstellar",
+        "duracion": 169,
+        "clasificacion": 5,
+        "genero": "Ciencia ficción",
+        "estreno": "2014-11-07"
+    },
+    {
+        "nombre": "Parasite",
+        "duracion": 132,
+        "clasificacion": 5,
+        "genero": "Suspense",
+        "estreno": "2019-05-30"
+    },
+    {
+        "nombre": "The Emoji Movie",
+        "duracion": 86,
+        "clasificacion": 2,
+        "genero": "Animación",
+        "estreno": "2017-07-28"
+    },
+    {
+        "nombre": "Mad Max: Fury Road",
+        "duracion": 120,
+        "clasificacion": 4,
+        "genero": "Acción",
+        "estreno": "2015-05-15"
+    },
+    {
+        "nombre": "Toy Story",
+        "duracion": 81,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "1995-11-22"
+    },
+    {
+        "nombre": "The Grand Budapest Hotel",
+        "duracion": 99,
+        "clasificacion": 4,
+        "genero": "Comedia",
+        "estreno": "2014-03-07"
+    },
+    {
+        "nombre": "Spirited Away",
+        "duracion": 125,
+        "clasificacion": 5,
+        "genero": "Animación",
+        "estreno": "2001-07-20"
+    },
+    {
+        "nombre": "Jaws",
+        "duracion": 124,
+        "clasificacion": 4,
+        "genero": "Suspense",
+        "estreno": "1975-06-20"
+    },
+    {
+        "nombre": "The Shining",
+        "duracion": 146,
+        "clasificacion": 4,
+        "genero": "Terror",
+        "estreno": "1980-05-23"
+    },
+    {
+        "nombre": "La La Land",
+        "duracion": 128,
+        "clasificacion": 4,
+        "genero": "Musical",
+        "estreno": "2016-12-09"
+    },
+    {
+        "nombre": "The Princess Bride",
+        "duracion": 98,
+        "clasificacion": 4,
+        "genero": "Fantasía",
+        "estreno": "1987-09-25"
+    },
+    {
+        "nombre": "Deadpool",
+        "duracion": 108,
+        "clasificacion": 4,
+        "genero": "Acción",
+        "estreno": "2016-02-12"
+    },
+    {
+        "nombre": "The Truman Show",
+        "duracion": 103,
+        "clasificacion": 4,
+        "genero": "Drama",
+        "estreno": "1998-06-05"
+    },
+    {
+        "nombre": "Blade Runner",
+        "duracion": 117,
+        "clasificacion": 4,
+        "genero": "Ciencia ficción",
+        "estreno": "1982-06-25"
+    },
+    {
+        "nombre": "The Big Lebowski",
+        "duracion": 117,
+        "clasificacion": 4,
+        "genero": "Comedia",
+        "estreno": "1998-03-06"
+    },
+    {
+        "nombre": "Coco",
+        "duracion": 105,
+        "clasificacion": 5,
+        "genero": "Animación",
+        "estreno": "2017-11-22"
+    },
+    {
+        "nombre": "Django Unchained",
+        "duracion": 165,
+        "clasificacion": 4,
+        "genero": "Western",
+        "estreno": "2012-12-25"
+    },
+    {
+        "nombre": "The Exorcist",
+        "duracion": 122,
+        "clasificacion": 4,
+        "genero": "Terror",
+        "estreno": "1973-12-26"
+    },
+    {
+        "nombre": "Harry Potter and the Sorcerer's Stone",
+        "duracion": 152,
+        "clasificacion": 4,
+        "genero": "Fantasía",
+        "estreno": "2001-11-16"
+    },
+    {
+        "nombre": "The Breakfast Club",
+        "duracion": 97,
+        "clasificacion": 4,
+        "genero": "Drama",
+        "estreno": "1985-02-15"
+    },
+    {
+        "nombre": "Up",
+        "duracion": 96,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "2009-05-29"
+    },
+    {
+        "nombre": "Rocky",
+        "duracion": 120,
+        "clasificacion": 4,
+        "genero": "Drama",
+        "estreno": "1976-11-21"
+    },
+    {
+        "nombre": "The Sixth Sense",
+        "duracion": 107,
+        "clasificacion": 4,
+        "genero": "Suspense",
+        "estreno": "1999-08-06"
+    },
+    {
+        "nombre": "Frozen",
+        "duracion": 102,
+        "clasificacion": 4,
+        "genero": "Animación",
+        "estreno": "2013-11-27"
+    },
+    {
+        "nombre": "Saving Private Ryan",
+        "duracion": 169,
+        "clasificacion": 5,
+        "genero": "Guerra",
+        "estreno": "1998-07-24"
+    },
+    {
+        "nombre": "Catwoman",
+        "duracion": 104,
+        "clasificacion": 1,
+        "genero": "Acción",
+        "estreno": "2004-07-23"
+    }
+]
