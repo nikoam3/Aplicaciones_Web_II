@@ -8,20 +8,10 @@
       "completada": true,
       "productos": [
         {
-          "id": 1,
-          "nombre": "The Shawshank Redemption",
-          "desc": "Un drama sobre la esperanza y la redención en prisión.",
-          "precio": 15.99,
-          "imagen": "shawshank.jpg",
-          "esDigital": false
+          "id": 1
         },
         {
-          "id": 2,
-          "nombre": "Inception",
-          "desc": "Un ladrón especializado en infiltrarse en sueños.",
-          "precio": 12.50,
-          "imagen": "inception.jpg",
-          "esDigital": true
+          "id": 2
         }
       ]
     },
@@ -34,12 +24,7 @@
       "completada": true,
       "productos": [
         {
-          "id": 3,
-          "nombre": "The Lion King",
-          "desc": "La épica historia de Simba y su ascenso al trono.",
-          "precio": 9.99,
-          "imagen": "lionking.jpg",
-          "esDigital": false
+          "id": 3
         }
       ]
     },
@@ -52,20 +37,10 @@
       "completada": false,
       "productos": [
         {
-          "id": 4,
-          "nombre": "Pulp Fiction",
-          "desc": "Historias entrelazadas de crimen y redención.",
-          "precio": 14.75,
-          "imagen": "pulpfiction.jpg",
-          "esDigital": true
+          "id": 4
         },
         {
-          "id": 5,
-          "nombre": "The Room",
-          "desc": "Un drama infame por su peculiar narrativa.",
-          "precio": 5.00,
-          "imagen": "theroom.jpg",
-          "esDigital": false
+          "id": 5
         }
       ]
     },
@@ -74,16 +49,11 @@
       "id_usuario": 5,
       "fecha": "2025-04-02",
       "total": 12.50,
-      "direccion": null,
+      "direccion": "No especificada",
       "completada": true,
       "productos": [
         {
-          "id": 2,
-          "nombre": "Inception",
-          "desc": "Un ladrón especializado en infiltrarse en sueños.",
-          "precio": 12.50,
-          "imagen": "inception.jpg",
-          "esDigital": true
+          "id": 2
         }
       ]
     }
