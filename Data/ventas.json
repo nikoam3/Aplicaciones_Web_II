@@ -1,60 +1,82 @@
 [
-    {
-      "id": 1,
-      "id_usuario": 1,
-      "fecha": "2025-03-15",
-      "total": 28.49,
-      "direccion": "Calle Falsa 123, Ciudad",
-      "completada": true,
-      "productos": [
-        {
-          "id": 1
-        },
-        {
-          "id": 2
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "id_usuario": 3,
-      "fecha": "2025-03-20",
-      "total": 9.99,
-      "direccion": "Avenida Siempre Viva 456, Pueblo",
-      "completada": true,
-      "productos": [
-        {
-          "id": 3
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "id_usuario": 2,
-      "fecha": "2025-04-01",
-      "total": 19.75,
-      "direccion": "Calle Luna 789, Capital",
-      "completada": false,
-      "productos": [
-        {
-          "id": 4
-        },
-        {
-          "id": 5
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "id_usuario": 5,
-      "fecha": "2025-04-02",
-      "total": 12.50,
-      "direccion": "No especificada",
-      "completada": true,
-      "productos": [
-        {
-          "id": 2
-        }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "id_usuario": 1,
+    "fecha": "2025-03-15",
+    "total": 28.49,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": true,
+    "productos": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "id_usuario": 3,
+    "fecha": "2025-03-20",
+    "total": 9.99,
+    "direccion": "Avenida Siempre Viva 456, Pueblo",
+    "completada": true,
+    "productos": [
+      {
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "id_usuario": 2,
+    "fecha": "2025-04-01",
+    "total": 19.75,
+    "direccion": "Calle Luna 789, Capital",
+    "completada": false,
+    "productos": [
+      {
+        "id": 4
+      },
+      {
+        "id": 5
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "id_usuario": 5,
+    "fecha": "2025-04-02",
+    "total": 12.5,
+    "direccion": "No especificada",
+    "completada": true,
+    "productos": [
+      {
+        "id": 1
+      },
+      {
+        "id": 2
+      },
+      {
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "id_usuario": 1,
+    "fecha": "2025-03-15",
+    "total": 28.49,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": true,
+    "productos": [
+      {
+        "id": 2
+      },
+      {
+        "id": 3
+      }
+    ]
+  }
+]

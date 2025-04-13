@@ -1,18 +1,20 @@
-import {readFile} from 'fs/promises'
-const file = await readFile('./data.json', 'utf-8')
+import express from "express"
+import dotenv from "dotenv"
+import productosRouter from "./routes/productos.routes.js"
+import usuariosRouter from "./routes/usuarios.routes.js"
+import ventasRouter from "./routes/ventas.routes.js"
+//traer nuestras variables de entorno
+dotenv.config()
 
-const peliculas = JSON.parse(file)
+//crear instancia
+const app = express()
+app.use(express.json())
+const port = process.env.PORT
 
-//todas las peliculas que sean de un genero
-const get_genero = (genero) => {
-    return peliculas.filter(p => p.genero == genero)
-}
-//console.log(get_genero("Drama"))
+//levantar el servidor
+app.listen(port, () => {
+})
 
-//todas las peliculas que su duracion sea menor a 120 minutos
-const get_duracion = () => {
-    let peliculasLista = peliculas.filter(p => p.duracion <= 120)
-    return peliculasLista.map(p=> p.nombre)
-}
-
-console.log(get_duracion())
+app.use('/usuarios', usuariosRouter)
+app.use('/ventas', ventasRouter)
+app.use('/productos', productosRouter)
