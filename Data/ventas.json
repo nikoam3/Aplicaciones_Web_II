@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "id_usuario": 1,
+    "id_usuario": 3,
     "fecha": "2025-03-15",
     "total": 28.49,
     "direccion": "Calle Falsa 123, Ciudad",
@@ -17,14 +17,17 @@
   },
   {
     "id": 2,
-    "id_usuario": 3,
+    "id_usuario": 1,
     "fecha": "2025-03-20",
     "total": 9.99,
     "direccion": "Avenida Siempre Viva 456, Pueblo",
     "completada": true,
     "productos": [
       {
-        "id": 3
+        "id": 1
+      },
+      {
+        "id": 2
       }
     ]
   },
@@ -73,6 +76,25 @@
     "productos": [
       {
         "id": 2
+      },
+      {
+        "id": 3
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "id_usuario": 4,
+    "fecha": "2025-04-15",
+    "total": 11,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 2
+      },
+      {
+        "id": 1
       },
       {
         "id": 3

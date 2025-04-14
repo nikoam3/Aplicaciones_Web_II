@@ -9,8 +9,8 @@ dotenv.config()
 //crear instancia
 const app = express()
 app.use(express.json())
-const port = process.env.PORT
-
+//const port = process.env.PORT
+const port = 3000
 //levantar el servidor
 app.listen(port, () => {
 })

@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "The Shawshank Redemption",
     "desc": "Un drama sobre la esperanza y la redención en prisión.",
-    "precio": 15.99,
+    "precio": 12,
     "imagen": "shawshank.jpg",
     "esDigital": false
   },

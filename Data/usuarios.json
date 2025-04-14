@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nombre": "Ana",
-    "apellido": "Gómeez",
+    "apellido": "Gómez",
     "email": "ana.gomez@example.com",
     "contraseña": ""
   },
@@ -36,13 +36,6 @@
   },
   {
     "id": 6,
-    "nombre": "Pepito",
-    "apellido": "Juarez",
-    "email": "pepijua@example.com",
-    "contraseña": ""
-  },
-  {
-    "id": 7,
     "nombre": "Pepito",
     "apellido": "Juarez",
     "email": "pepijua@example.com",

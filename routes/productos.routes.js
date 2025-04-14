@@ -2,15 +2,15 @@ import { Router } from "express"
 import {
     get_productos_all, get_productos_by_id,
     get_productos_by_price, get_productos_by_digital,
-    get_index_productos_by_id, update_productos_by_price,
-    add_producto, delete_producto
+    update_productos_by_price, add_producto,
+    delete_producto
 } from '../utils/productos.utils.js'
 
 const router = Router()
 
-router.get('/all', (req, res) => {
+router.get('/all', async (req, res) => {
     try {
-        const productos = get_productos_all()
+        const productos = await get_productos_all()
         if (productos.length) {
             res.status(200).json(productos)
         } else {
@@ -21,10 +21,10 @@ router.get('/all', (req, res) => {
     }
 })
 
-router.get('/byId/:id', (req, res) => {
+router.get('/byId/:id', async (req, res) => {
     const id = req.params.id
     try {
-        const producto = get_productos_by_id(id)
+        const producto = await get_productos_by_id(id)
         if (producto) {
             res.status(200).json(producto)
         } else {
@@ -35,10 +35,10 @@ router.get('/byId/:id', (req, res) => {
     }
 })
 
-router.post('/precio', (req, res) => {
+router.post('/precio', async (req, res) => {
     const precio = req.body.precio
     try {
-        const productos = get_productos_by_price(precio)
+        const productos = await get_productos_by_price(precio)
         if (productos.length) {
             res.status(200).json(productos)
         } else {
@@ -49,10 +49,10 @@ router.post('/precio', (req, res) => {
     }
 })
 
-router.post('/digital/', (req, res) => {
+router.post('/digital/', async (req, res) => {
     const digital = req.body.esDigital
     try {
-        const productos = get_productos_by_digital(digital)
+        const productos = await get_productos_by_digital(digital)
         if (productos.length) {
             res.status(200).json(productos)
         } else {
@@ -63,13 +63,13 @@ router.post('/digital/', (req, res) => {
     }
 })
 
-router.put('/update/precio/:id', (req, res) => {
+router.put('/update/precio/:id', async (req, res) => {
     const id = req.params.id
     const newPrecio = req.body.precio
     try {
-        const index = get_index_productos_by_id(id)
+        const index = await get_productos_by_id(id, true)
         if (index != -1) {
-            update_productos_by_price(newPrecio, index)
+            await update_productos_by_price(newPrecio, index)
             res.status(200).json(`Precio de producto id: ${id} actualizado correctamente`)
         } else {
             res.status(400).json(`${id} no encontrado`)
@@ -79,7 +79,7 @@ router.put('/update/precio/:id', (req, res) => {
     }
 })
 
-router.put('/add', (req, res) => {
+router.put('/add', async (req, res) => {
     const newId = req.body.id
     const newNombre = req.body.nombre
     const newDesc = req.body.desc
@@ -98,7 +98,7 @@ router.put('/add', (req, res) => {
 
     try {
         if (newId) {
-            add_producto(newProducto)
+            await add_producto(newProducto)
             res.status(200).json(`Producto ${newNombre} agregado correctamente`)
         } else {
             res.status(400).json(`Error al agregar nuevo producto`)
@@ -108,12 +108,12 @@ router.put('/add', (req, res) => {
     }
 })
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const id = req.params.id
     try {
-        const index = get_index_productos_by_id(id)
+        const index = await get_productos_by_id(id, true)
         if (index != -1) {
-            delete_producto(id)
+            await delete_producto(index)
             res.status(200).json(`${id} eliminado correctamente`)
         } else {
             res.status(400).json(`Id: ${id} no encontrado`)
