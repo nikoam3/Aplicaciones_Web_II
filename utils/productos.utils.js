@@ -26,10 +26,10 @@ export const get_productos_by_id = async (id, index) => {
 }
 
 //devuelve los productos que estén por debajo de un precio
-export const get_productos_by_price = async (price) => {
+export const get_productos_by_price = async (genero) => {
     try {
         const productos = await get_productos_all()
-        return productos.filter(p => p.precio <= price)
+        return productos.filter(p => p.precio <= genero)
     } catch (error) {
         console.error(error.mensaje)
     }
@@ -45,11 +45,37 @@ export const get_productos_by_digital = async (digital) => {
     }
 }
 
-//actualiza el precio de los productos
-export const update_productos_by_price = async (newPrecio, index) => {
+//devuelvo los productos por genero
+export const get_productos_by_genero = async (genero) => {
     try {
         let productos = await get_productos_all()
-        productos[index].precio = newPrecio
+        return productos.filter(p => p.genero == genero)
+    } catch (error) {
+        console.error(error.mensaje)
+    }
+}
+
+//devuelvo los productos por calificacion
+export const get_productos_by_calificacion = async (calificacion) => {
+    try {
+        let productos = await get_productos_all()
+        return productos.filter(p => p.calif == calificacion)
+    } catch (error) {
+        console.error(error.mensaje)
+    }
+}
+
+//actualiza un producto
+export const update_productos = async (newProducto, index) => {
+    try {
+        let productos = await get_productos_all()
+        productos[index].nombre = newProducto.nombre
+        productos[index].desc = newProducto.desc
+        productos[index].precio = newProducto.precio
+        productos[index].imagen = newProducto.imagen
+        productos[index].esDigital = newProducto.esDigital
+        productos[index].genero = newProducto.genero
+        productos[index].calif = newProducto.calif
         await writeFile('./Data/productos.json', JSON.stringify(productos, null, 2))
     } catch (error) {
         console.error(error.mensaje)

@@ -46,12 +46,25 @@ export const get_usuario_by_name = async (nombre, apellido) => {
     }
 }
 
+//devuelve los usuarios a traves del apellido y nombre
+export const get_login = async (userName, pass) => {
+    try {
+        const usuarios = await get_usuarios_all()
+        return usuarios.find(u => u.email == userName && u.contraseña == pass)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 //actualiza el nombre y apellido de los usuarios
-export const update_usuarios_by_name = async (newName, newLastName, index) => {
+export const update_usuarios = async (newusuario, index) => {
     try {
         let usuarios = await get_usuarios_all()
-        usuarios[index].nombre = newName
-        usuarios[index].apellido = newLastName
+        usuarios[index].nombre = newusuario.nombre
+        usuarios[index].apellido = newusuario.apellido
+        usuarios[index].email = newusuario.email
+        usuarios[index].direccion = newusuario.direccion
+        usuarios[index].contraseña = newusuario.contraseña
         await writeFile('./Data/usuarios.json', JSON.stringify(usuarios, null, 2))
     } catch (error) {
         console.error(error);

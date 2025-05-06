@@ -4,41 +4,47 @@
     "nombre": "Ana",
     "apellido": "Gómez",
     "email": "ana.gomez@example.com",
-    "contraseña": ""
+    "contraseña": "123",
+    "direccion": "Calle siempre viva 123, Ciudad"
   },
   {
     "id": 2,
     "nombre": "Carlos",
     "apellido": "Pérez",
     "email": "carlos.perez@example.com",
-    "contraseña": ""
+    "contraseña": "456",
+    "direccion": "Avenida Siempre Viva 456, Pueblo"
   },
   {
     "id": 3,
     "nombre": "María",
     "apellido": "López",
     "email": "maria.lopez@example.com",
-    "contraseña": ""
+    "contraseña": "789",
+    "direccion": "Calle Luna 789, Capital"
   },
   {
     "id": 4,
     "nombre": "Juan",
     "apellido": "Martínez",
     "email": "juan.martinez@example.com",
-    "contraseña": ""
+    "contraseña": "1011",
+    "direccion": "Calle Sol 101, Ciudad"
   },
   {
     "id": 5,
     "nombre": "Sofía",
     "apellido": "Rodríguez",
     "email": "sofia.rodriguez@example.com",
-    "contraseña": ""
+    "contraseña": "1213",
+    "direccion": "Calle Estrella 202, Pueblo"
   },
   {
     "id": 6,
     "nombre": "Pepito",
     "apellido": "Juarez",
     "email": "pepijua@example.com",
-    "contraseña": ""
+    "contraseña": "1415",
+    "direccion": "Calle Sin Salida 202, Pueblo"
   }
 ]

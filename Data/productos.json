@@ -3,48 +3,200 @@
     "id": 1,
     "nombre": "The Shawshank Redemption",
     "desc": "Un drama sobre la esperanza y la redención en prisión.",
-    "precio": 12,
-    "imagen": "shawshank.jpg",
-    "esDigital": false
+    "precio": 15,
+    "imagen": "https://pics.filmaffinity.com/Cadena_perpetua-576140557-large.jpg",
+    "esDigital": false,
+    "genero": "Drama",
+    "calif": "R"
   },
   {
     "id": 2,
     "nombre": "Inception",
     "desc": "Un ladrón especializado en infiltrarse en sueños.",
     "precio": 12.5,
-    "imagen": "inception.jpg",
-    "esDigital": true
+    "imagen": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_QL75_UX190_CR0,0,190,281_.jpg",
+    "esDigital": true,
+    "genero": "Ciencia Ficción",
+    "calif": "PG-13"
   },
   {
     "id": 3,
     "nombre": "The Lion King",
     "desc": "La épica historia de Simba y su ascenso al trono.",
     "precio": 9.99,
-    "imagen": "lionking.jpg",
-    "esDigital": false
+    "imagen": "https://play-lh.googleusercontent.com/MMeX4cqzxAd6EOC8f8Hpp7Io-ydbNLUYfS37-fc2BRR-OBwvKWimulsG1-iP6UGnQwmd",
+    "esDigital": false,
+    "genero": "Animación",
+    "calif": "G"
   },
   {
     "id": 4,
     "nombre": "Pulp Fiction",
     "desc": "Historias entrelazadas de crimen y redención.",
     "precio": 14.75,
-    "imagen": "pulpfiction.jpg",
-    "esDigital": true
+    "imagen": "https://pics.filmaffinity.com/Pulp_Fiction-210382116-large.jpg",
+    "esDigital": true,
+    "genero": "Crimen",
+    "calif": "R"
   },
   {
     "id": 5,
-    "nombre": "The Room",
-    "desc": "Un drama infame por su peculiar narrativa.",
-    "precio": 11.5,
-    "imagen": "theroom.jpg",
-    "esDigital": false
+    "nombre": "The Godfather",
+    "desc": "La historia de la familia Corleone y el crimen organizado.",
+    "precio": 18,
+    "imagen": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTgQePvl5YyKsE4bhTBXZpyWbNMFYuHfZqe0sgSTtQsW8gDB7bm7aSxQh4PYuVDvcd7UVpc0ev1Ira3M6V7on7FykLXg169HxeoxRExccc",
+    "esDigital": false,
+    "genero": "Crimen",
+    "calif": "R"
   },
   {
     "id": 6,
-    "nombre": "1917",
-    "desc": "Alta peli de guerra.",
-    "precio": 12.5,
-    "imagen": "theroom.jpg",
-    "esDigital": true
+    "nombre": "The Dark Knight",
+    "desc": "Batman enfrenta al Joker en una batalla épica.",
+    "precio": 16,
+    "imagen": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSCbZe3-VF-UzvuW80mL5zBYlnKZpgYckUFE_k4wWCiOaEUyLnxtsufNgUDY6JYgF9WDtAJOcgWRDjEs3zY4jmljnrbLGxlfo3HRs0b2g",
+    "esDigital": true,
+    "genero": "Acción",
+    "calif": "PG-13"
+  },
+  {
+    "id": 7,
+    "nombre": "Forrest Gump",
+    "desc": "La vida de un hombre con un corazón puro y una mente simple.",
+    "precio": 11.5,
+    "imagen": "https://pics.filmaffinity.com/Forrest_Gump-212765827-large.jpg",
+    "esDigital": false,
+    "genero": "Drama",
+    "calif": "PG-13"
+  },
+  {
+    "id": 8,
+    "nombre": "The Matrix",
+    "desc": "Un hacker descubre la verdad sobre su realidad.",
+    "precio": 13,
+    "imagen": "https://pics.filmaffinity.com/Matrix-155050517-large.jpg",
+    "esDigital": true,
+    "genero": "Ciencia Ficción",
+    "calif": "R"
+  },
+  {
+    "id": 9,
+    "nombre": "Gladiator",
+    "desc": "Un general romano busca venganza en la arena.",
+    "precio": 14.5,
+    "imagen": "https://pics.filmaffinity.com/Gladiator-368149580-large.jpg",
+    "esDigital": false,
+    "genero": "Acción",
+    "calif": "R"
+  },
+  {
+    "id": 10,
+    "nombre": "Avatar",
+    "desc": "Un exmarine se infiltra en una civilización alienígena.",
+    "precio": 17,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqOzGsta_2RrhuwDcqIg-F8Pji1mXvWLPjPOU3OUxqPPOMiUegaPY_H0CYV5DrKaVxD-GwLJ8Mu-pohCCQflVhdYGGcm-zga39jNkbkg0",
+    "esDigital": true,
+    "genero": "Ciencia Ficción",
+    "calif": "PG-13"
+  },
+  {
+    "id": 11,
+    "nombre": "La era de hielo 1",
+    "desc": "Comedia infantil en la era del Paleolítico",
+    "precio": 5,
+    "imagen": "https://es.web.img2.acsta.net/medias/nmedia/18/68/20/43/19014748.jpg",
+    "esDigital": false,
+    "genero": "Animación",
+    "calif": "PG"
+  },
+  {
+    "id": 12,
+    "nombre": "Parasite",
+    "desc": "Una familia pobre se infiltra en la vida de una familia rica.",
+    "precio": 13.5,
+    "imagen": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRL-zk4pAQUc8bjcq2zCJOD2ATdFSqj-VbuXPKyuWvupQnIDjgtUcYlDieQlgTmIU5XPivT-0x27ByP20AJ_tuSlRShc2vtcdG7Tr_oPQ",
+    "esDigital": true,
+    "genero": "Thriller",
+    "calif": "R"
+  },
+  {
+    "id": 13,
+    "nombre": "Titanic",
+    "desc": "Una historia de amor en el trágico hundimiento del Titanic.",
+    "precio": 12,
+    "imagen": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSia2P7CQwez5B2b6cDmKcj2z9FeoXfve3UPYeqd_3QyqqsOJXN1sVl26j7x941UIv6mOB5QEjW1DTSPY5Cspq4_lZvJj3A7i-BVDVuPw",
+    "esDigital": false,
+    "genero": "Romance",
+    "calif": "PG-13"
+  },
+  {
+    "id": 14,
+    "nombre": "Star Wars: A New Hope",
+    "desc": "Luke Skywalker comienza su aventura para salvar la galaxia.",
+    "precio": 15.5,
+    "imagen": "https://play-lh.googleusercontent.com/7OTx1DboUIszuMbHZwFHhYOLRQspWozEx7xFtYKG674mtGA_PSRPGIdtv7jmR4jQ9d0",
+    "esDigital": true,
+    "genero": "Ciencia Ficción",
+    "calif": "PG"
+  },
+  {
+    "id": 15,
+    "nombre": "Finding Nemo",
+    "desc": "Un pez payaso busca a su hijo perdido en el océano.",
+    "precio": 8.99,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj27KYkDu2UwPeOmmkeBF4uB2HraHMPGysWg&s",
+    "esDigital": false,
+    "genero": "Animación",
+    "calif": "G"
+  },
+  {
+    "id": 16,
+    "nombre": "The Avengers",
+    "desc": "Héroes se unen para salvar al mundo de una invasión alienígena.",
+    "precio": 16.5,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN1FwbGjU9P6Xkni-ri0OmtSbFIf_f6_zcsQ&s",
+    "esDigital": true,
+    "genero": "Acción",
+    "calif": "PG-13"
+  },
+  {
+    "id": 17,
+    "nombre": "Amélie",
+    "desc": "Una joven parisina cambia la vida de quienes la rodean.",
+    "precio": 10,
+    "imagen": "https://pics.filmaffinity.com/Amaelie-846218382-large.jpg",
+    "esDigital": true,
+    "genero": "Comedia",
+    "calif": "R"
+  },
+  {
+    "id": 18,
+    "nombre": "Jurassic Park",
+    "desc": "Dinosaurios escapan en un parque temático de alta tecnología.",
+    "precio": 14,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQZu5Kk2XuS7HHr1sRWDzMethy6bAKXoDhXw&s",
+    "esDigital": false,
+    "genero": "Aventura",
+    "calif": "PG-13"
+  },
+  {
+    "id": 19,
+    "nombre": "Spirited Away",
+    "desc": "Una niña explora un mundo mágico para salvar a sus padres.",
+    "precio": 11,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVvnjOZ10oGv8ZRQC0pyeemDqzMULSgL-KhA&s",
+    "esDigital": true,
+    "genero": "Animación",
+    "calif": "PG"
+  },
+  {
+    "id": 20,
+    "nombre": "Fight Club",
+    "desc": "Un hombre insatisfecho crea un club secreto de peleas.",
+    "precio": 13.75,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5rkKTG2JFWq_FiFZnIkDhQ_ZPqYAPHYqAw&s",
+    "esDigital": true,
+    "genero": "Drama",
+    "calif": "R"
   }
 ]

@@ -2,7 +2,7 @@ import { Router } from "express"
 import {
     get_usuarios_all, get_usuarios_by_id,
     get_usuario_by_email, get_usuario_by_name,
-    update_usuarios_by_name,
+    update_usuarios, get_login,
     add_usuario, delete_usuario
 } from '../utils/usuarios.utils.js'
 
@@ -65,15 +65,41 @@ router.post('/name', async (req, res) => {
     }
 })
 
-router.put('/update/name/:id', async (req, res) => {
+router.post('/login', async (req, res) => {
+    const userName = req.body.userName
+    const pass = req.body.pass
+    try {
+        const usuario = await get_login(userName, pass)
+        if (usuario) {
+            res.status(200).json(usuario)
+        } else {
+            res.status(400).json(`Usuario o contraseña incorrectos`)
+        }
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
+})
+
+router.post('/update/:id', async (req, res) => {
     const id = req.params.id
     const newNombre = req.body.nombre
     const newApellido = req.body.apellido
+    const newEmail = req.body.email
+    const newDireccion = req.body.direccion
+    const newContraseña = req.body.contraseña
+
+    const newusuario = {
+        nombre: newNombre,
+        apellido: newApellido,
+        email: newEmail,
+        direccion: newDireccion,
+        contraseña: newContraseña,
+    }
 
     try {
         const index = await get_usuarios_by_id(id, true)
         if (index != -1) {
-            await update_usuarios_by_name(newNombre, newApellido, index)
+            await update_usuarios(newusuario, index)
             res.status(200).json(`Nombre de usuario id: ${id} actualizado correctamente`)
         } else {
             res.status(400).json(`Id: ${id} no encontrado`)
@@ -89,6 +115,7 @@ router.put('/add', async (req, res) => {
     const newNombre = req.body.nombre
     const newApellido = req.body.apellido
     const newEmail = req.body.email
+    const newDireccion = req.body.direccion
     const newContraseña = req.body.contraseña
 
     const newusuario = {
@@ -96,6 +123,7 @@ router.put('/add', async (req, res) => {
         nombre: newNombre,
         apellido: newApellido,
         email: newEmail,
+        direccion: newDireccion,
         contraseña: newContraseña,
     }
 

@@ -100,5 +100,103 @@
         "id": 3
       }
     ]
+  },
+  {
+    "id": 6,
+    "id_usuario": 1,
+    "fecha": "2025-05-02T19:22:34.020Z",
+    "total": 5,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 11
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "id_usuario": 1,
+    "fecha": "2025-05-02T19:23:59.082Z",
+    "total": 40.5,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 16
+      },
+      {
+        "id": 18
+      },
+      {
+        "id": 17
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "id_usuario": 1,
+    "fecha": "2025-05-02T19:25:48.135Z",
+    "total": 40.5,
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 16
+      },
+      {
+        "id": 17
+      },
+      {
+        "id": 18
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "id_usuario": 1,
+    "fecha": "2025-05-06T00:54:22.087Z",
+    "total": "72",
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 2
+      },
+      {
+        "id": 3
+      },
+      {
+        "id": 1
+      },
+      {
+        "id": 18
+      },
+      {
+        "id": 19
+      },
+      {
+        "id": 17
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "id_usuario": 1,
+    "fecha": "2025-05-06T00:59:14.140Z",
+    "total": "41",
+    "direccion": "Calle Falsa 123, Ciudad",
+    "completada": false,
+    "productos": [
+      {
+        "id": 16
+      },
+      {
+        "id": 17
+      },
+      {
+        "id": 9
+      }
+    ]
   }
 ]
