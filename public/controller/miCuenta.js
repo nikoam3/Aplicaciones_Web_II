@@ -17,19 +17,31 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 document.getElementById('botonActualizarUsuario').addEventListener('click', async (e) => {
     e.preventDefault()
+
+    const id = getSession().id
     const newNombre = document.getElementById('newNombre').value
     const newApellido = document.getElementById('newApellido').value
     const newEmail = document.getElementById('newEmail').value
     const newDireccion = document.getElementById('newDireccion').value
+    const contraseña = getSession().contraseña
 
-    const id = getSession().id
+    const user = {
+        id: id,
+        nombre: newNombre,
+        apellido: newApellido,
+        email: newEmail,
+        direccion: newDireccion,
+        contraseña: contraseña
+    }
+
+    /*const id = getSession().id
     const nombre = newNombre
     const apellido = newApellido
     const email = newEmail
     const direccion = newDireccion
-    const contraseña = getSession().contraseña
+    const contraseña = getSession().contraseña*/
 
-    const updateUsuarioOk = await updateUsuario({ id, nombre, apellido, email, direccion, contraseña })
+    const updateUsuarioOk = await updateUsuario(user)
     if (updateUsuarioOk) {
         const newUsuario = await getById({ id })
         addSession(newUsuario)

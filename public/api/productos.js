@@ -21,7 +21,7 @@ export const loadProducts = async () => {
         console.error('Error al cargar los productos:', error);
     }
 }
-
+/*
 export const addProducts = async ({ id, nombre, desc, precio, imagen, esDigital }) => {
     try {
         const response = await fetch(`${API_PRODUCTOS}/add`, {
@@ -90,7 +90,7 @@ export const updateProducts = async ({ id, nombre, desc, precio, imagen, esDigit
         console.error('Error al actualizar el producto:', error);
     }
 }
-
+*/
 export const get_genero = async (genero) => {
     try {
         const response = await fetch(`${API_PRODUCTOS}/genero`, {

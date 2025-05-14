@@ -94,29 +94,24 @@ router.post('/calificacion', async (req, res) => {
 
 router.put('/update/:id', async (req, res) => {
     const id = req.params.id
-    const newNombre = req.body.nombre
-    const newDesc = req.body.desc
-    const newPrecio = req.body.precio
-    const newImagen = req.body.imagen
-    const newEsDigital = req.body.esDigital
-    const newGenero= req.body.genero
-    const newCalif = req.body.calif
+    const { nombre, desc, precio, imagen, esDigital, genero, calif } = req.body
+
 
     const newProducto = {
-        nombre: newNombre,
-        desc: newDesc,
-        precio: newPrecio,
-        imagen: newImagen,
-        esDigital: newEsDigital,
-        genero: newGenero,
-        calif: newCalif
+        nombre: nombre,
+        desc: desc,
+        precio: precio,
+        imagen: imagen,
+        esDigital: esDigital,
+        genero: genero,
+        calif: calif
     }
 
     try {
         const index = await get_productos_by_id(id, true)
         if (index != -1) {
             await update_productos(newProducto, index)
-            res.status(200).json(`Producto ${newProducto.nombre} modificado correctamente`)
+            res.status(200).json(`Producto ${nombre} modificado correctamente`)
         } else {
             res.status(400).json(`Error al agregar nuevo producto`)
         }
@@ -126,30 +121,23 @@ router.put('/update/:id', async (req, res) => {
 })
 
 router.post('/add', async (req, res) => {
-    const newId = req.body.id
-    const newNombre = req.body.nombre
-    const newDesc = req.body.desc
-    const newPrecio = req.body.precio
-    const newImagen = req.body.imagen
-    const newEsDigital = req.body.esDigital
-    const newGenero= req.body.genero
-    const newCalif = req.body.calif
+    const { id, nombre, desc, precio, imagen, esDigital, genero, calif } = req.body
 
     const newProducto = {
-        id: newId,
-        nombre: newNombre,
-        desc: newDesc,
-        precio: newPrecio,
-        imagen: newImagen,
-        esDigital: newEsDigital,
-        genero: newGenero,
-        calif: newCalif
+        id: id,
+        nombre: nombre,
+        desc: desc,
+        precio: precio,
+        imagen: imagen,
+        esDigital: esDigital,
+        genero: genero,
+        calif: calif
     }
 
     try {
         if (newId) {
             await add_producto(newProducto)
-            res.status(200).json(`Producto ${newNombre} agregado correctamente`)
+            res.status(200).json(`Producto ${nombre} agregado correctamente`)
         } else {
             res.status(400).json(`Error al agregar nuevo producto`)
         }

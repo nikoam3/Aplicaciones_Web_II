@@ -22,14 +22,14 @@ export const loadVentas = async () => {
     }
 }
 
-export const addVentas = async ({ id, id_usuario, fecha, total, direccion, completada, productos }) => {
+export const addVentas = async (venta) => {
     try {
         const response = await fetch(`${API_VENTAS}/add`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ id, id_usuario, fecha, total, direccion, completada, productos }),
+            body: JSON.stringify(venta),
         }).then((response) => {
             if (response.ok) {
                 return response.json()

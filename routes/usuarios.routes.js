@@ -82,18 +82,14 @@ router.post('/login', async (req, res) => {
 
 router.post('/update/:id', async (req, res) => {
     const id = req.params.id
-    const newNombre = req.body.nombre
-    const newApellido = req.body.apellido
-    const newEmail = req.body.email
-    const newDireccion = req.body.direccion
-    const newContraseña = req.body.contraseña
+    const { nombre, apellido, email, direccion, contraseña } = req.body
 
     const newusuario = {
-        nombre: newNombre,
-        apellido: newApellido,
-        email: newEmail,
-        direccion: newDireccion,
-        contraseña: newContraseña,
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        direccion: direccion,
+        contraseña: contraseña,
     }
 
     try {
@@ -111,20 +107,15 @@ router.post('/update/:id', async (req, res) => {
 
 //agrega un nuevo usuario
 router.put('/add', async (req, res) => {
-    const newId = req.body.id
-    const newNombre = req.body.nombre
-    const newApellido = req.body.apellido
-    const newEmail = req.body.email
-    const newDireccion = req.body.direccion
-    const newContraseña = req.body.contraseña
+    const { id, nombre, apellido, email, direccion, contraseña } = req.body
 
     const newusuario = {
-        id: newId,
-        nombre: newNombre,
-        apellido: newApellido,
-        email: newEmail,
-        direccion: newDireccion,
-        contraseña: newContraseña,
+        id: id,
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        direccion: direccion,
+        contraseña: contraseña,
     }
 
     try {

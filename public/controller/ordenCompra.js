@@ -36,7 +36,7 @@ document.getElementById('botonComprar').addEventListener('click', async (e) => {
         productos: productos
     }
 
-    const ventaOk = await addVentas({ id, id_usuario, fecha, total, direccion, completada, productos })
+    const ventaOk = await addVentas(compraItem)
 
     if (ventaOk) {
         addCompraOk(compraItem)

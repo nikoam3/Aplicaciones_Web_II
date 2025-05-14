@@ -132,22 +132,16 @@ router.put('/update/productos/:id', async (req, res) => {
 })
 
 router.put('/add', async (req, res) => {
-    const newId = req.body.id
-    const newIdUsuario = req.body.id_usuario
-    const newFecha = req.body.fecha
-    const newTotal = req.body.total
-    const newDireccion = req.body.direccion
-    const newCompletada = req.body.completada
-    const newProductos = req.body.productos
+    const { id, id_usuario, fecha, total, direccion, completada, productos } = req.body
     let arrayProductos = []
 
     try {
-        const findUsuario = await get_usuarios_by_id(newIdUsuario)
+        const findUsuario = await get_usuarios_by_id(id_usuario)
         if (!findUsuario) {
-            res.status(400).json(`Id de usuario: ${newIdUsuario} no existe`)
+            res.status(400).json(`Id de usuario: ${id_usuario} no existe`)
         }
-        if (newProductos.length) {
-            await Promise.all(newProductos.map(async i => {
+        if (productos.length) {
+            await Promise.all(productos.map(async i => {
                 let findproducto = await get_productos_by_id(i)
                 if (findproducto) {
                     arrayProductos.push({ "id": findproducto.id })
@@ -161,22 +155,27 @@ router.put('/add', async (req, res) => {
         }
 
         const newventa = {
-            id: newId,
-            id_usuario: newIdUsuario,
-            fecha: newFecha,
-            total: newTotal,
-            direccion: newDireccion,
-            completada: newCompletada,
+            id: id,
+            id_usuario: id_usuario,
+            fecha: fecha,
+            total: total,
+            direccion: direccion,
+            completada: completada,
             productos: arrayProductos
         }
-        await add_venta(newventa)
-        res.status(200).json(`Venta agregada correctamente`)
-    }
-    catch (error) {
+
+        if (id) {
+            await add_venta(newventa)
+            res.status(200).json(`venta agregada correctamente`)
+        } else {
+            res.status(400).json(`Error al agregar nuevo venta`)
+        }
+    } catch (error) {
         res.status(500).json(error.message)
     }
-    try {
-        if (newId) {
+
+    /*try {
+        if (id) {
             await add_venta(newventa)
             res.status(200).json(`venta ${newNombre} agregado correctamente`)
         } else {
@@ -184,7 +183,7 @@ router.put('/add', async (req, res) => {
         }
     } catch (error) {
         res.status(500).json(error.message)
-    }
+    }*/
 })
 
 router.delete('/delete/:id', async (req, res) => {

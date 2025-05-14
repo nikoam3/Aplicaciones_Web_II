@@ -1,13 +1,13 @@
 import { API_USUARIOS } from './api.js'
 
-export const updateUsuario = async ({ id, nombre, apellido, email, direccion, contraseña }) => {
+export const updateUsuario = async (user) => {
     try {
-        const response = await fetch(`${API_USUARIOS}/update/${id}`, {
+        const response = await fetch(`${API_USUARIOS}/update/${user.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nombre, apellido, email, direccion, contraseña }),
+            body: JSON.stringify(user),
         }).then(async (response) => {
             if (response.ok) {
                 return response.json()
@@ -44,7 +44,7 @@ export const updateUsuario = async ({ id, nombre, apellido, email, direccion, co
     }
 };*/
 
-export const getById = async ({id}) => {
+export const getById = async ({ id }) => {
     try {
         const user = await fetch(`${API_USUARIOS}/byId/${id}`, {
             method: 'GET',
