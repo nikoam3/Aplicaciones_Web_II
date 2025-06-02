@@ -1,18 +1,16 @@
-import { getSession } from "../utils/sessionStorage.js";
+import { getUserDetails } from "../utils/sessionStorage.js";
 import { getUniqueGenero, getUniqueCalificacion } from "../utils/getUnique.js";
-import { addCarrito } from "../utils/sessionStorage.js";
+import { addCarrito } from "../utils/localStorage.js";
 import { renderProductos } from "../components/loadProductos.js";
 import { modalFiltroCalificacion, modalFiltroGenero } from "../components/modelFiltros.js";
 import { alert } from "../components/alerts.js";
 import { loadProducts } from "../api/productos.js";
-//import { renderNavbar } from "../components/navbar.js";
 
 const modalFilterGenero = document.getElementById('filterGenero')
 const modalFilterCalificacion = document.getElementById('filterCalificacion')
 
 document.getElementById('limpiarFiltros').addEventListener('click', async (e) => {
-
-    await loadProductosTable(await loadProducts())
+    loadProductosTable(await loadProducts())
 })
 
 document.getElementById('aplicarFiltros').addEventListener('click', async (e) => {
@@ -27,7 +25,7 @@ document.getElementById('aplicarFiltros').addEventListener('click', async (e) =>
         modalFilterCalificacion.innerHTML = modalFiltroCalificacion(arrayUniqueCalificacion)
     }
     if (selectCalif) {
-        arrayProductoFiltrados = arrayProductoFiltrados.filter(producto => producto.calif == selectCalif)
+        arrayProductoFiltrados = arrayProductoFiltrados.filter(producto => producto.calificacion == selectCalif)
         let arrayUniqueGenero = getUniqueGenero(arrayProductoFiltrados)
         modalFilterGenero.innerHTML = modalFiltroGenero(arrayUniqueGenero)
     }
@@ -39,7 +37,7 @@ document.getElementById('aplicarFiltros').addEventListener('click', async (e) =>
         modalFilterCalificacion.innerHTML = modalFiltroCalificacion(arrayUniqueCalificacion)
 
     }
-    await loadProductosTable(arrayProductoFiltrados)
+    loadProductosTable(arrayProductoFiltrados)
 })
 
 document.getElementById('selectAll').addEventListener('change', (e) => {
@@ -55,7 +53,7 @@ document.getElementById('botonAgregarCarrito').addEventListener('click', async (
     const productos = await loadProducts()
     if (checkSeleccionados.length) {
         checkSeleccionados.forEach(check => {
-            const productosSeleccionados = productos.find(p => p.id == check.id)
+            const productosSeleccionados = productos.find(p => p._id == check.id)
             arrayProductosSeleccionados.push(productosSeleccionados)
         })
         addCarrito(arrayProductosSeleccionados)
@@ -66,36 +64,35 @@ document.getElementById('botonAgregarCarrito').addEventListener('click', async (
     }
 })
 
-const loadProductosTable = async (data) => {
-    const table = document.getElementById('tableProductos');
-    try {
-        table.innerHTML = ''
-        if (data) {
-            data.map((producto) => {
-                table.innerHTML += renderProductos(producto)
-            }).join('')
-        }
-    }
-    catch (error) {
-        console.log('Error al cargar los productos:', error);
-    }
-}
+document.addEventListener('DOMContentLoaded', async () => {
+    loadUser()
+    const allProductos = await loadProducts()
+    loadProductosTable(allProductos)
+})
 
-const loadUser = () => {
-    const user = getSession();
+const loadUser = async () => {
+    const user = await getUserDetails();
+    if (!user) {
+        window.location.href = '../index.html';
+    }
     const userNameElement = document.getElementById('userName');
     userNameElement.textContent = `Bienvenido ${user.nombre} ${user.apellido}`;
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    //const navbar = document.getElementById('navbar')
-    //navbar.innerHTML += renderNavbar()
+const loadProductosTable = (data) => {
+    setFilters(data)
+    const table = document.getElementById('tableProductos');
+    table.innerHTML = ''
+    if (data) {
+        data.map((producto) => {
+            table.innerHTML += renderProductos(producto)
+        }).join('')
+    }
+}
 
-    loadUser()
-    const allProductos = await loadProducts()
-    await loadProductosTable(allProductos)
+const setFilters = (allProductos) => {
     const arrayUniqueGenero = getUniqueGenero(allProductos)
     const arrayUniqueCalificacion = getUniqueCalificacion(allProductos)
     modalFilterGenero.innerHTML = modalFiltroGenero(arrayUniqueGenero)
     modalFilterCalificacion.innerHTML = modalFiltroCalificacion(arrayUniqueCalificacion)
-})
+}

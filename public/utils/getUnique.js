@@ -5,6 +5,6 @@ export const getUniqueGenero = (data) => {
 }
 
 export const getUniqueCalificacion = (data) => {
-    let arrayProductosCalificacion = data.map((producto) => producto.calif)
+    let arrayProductosCalificacion = data.map((producto) => producto.calificacion)
     return [...new Set(arrayProductosCalificacion)];
 }

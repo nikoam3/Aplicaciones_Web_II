@@ -13,7 +13,7 @@ export const renderCompraRealizada = (compraOk, carrito, infoUser) => {
                     </div>
                     <div class="text-start">
                         <h5>Detalle Productos:</h5>
-                        <p class="mb-0">Nro de compra: ${compraOk.id}</p>
+                        <p class="mb-0">Nro de compra: ${compraOk._id}</p>
                         <p class="mb-0">Fecha: ${compraOk.fecha}</p>
                         <ul class="mb-0">Películas:
                             ${carrito.map(producto =>

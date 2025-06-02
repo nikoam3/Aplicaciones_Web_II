@@ -1,11 +1,15 @@
 import express from "express"
-import dotenv from "dotenv"
+import dotenv from 'dotenv'
 import cors from "cors"
 import productosRouter from "./routes/productos.routes.js"
 import usuariosRouter from "./routes/usuarios.routes.js"
 import ventasRouter from "./routes/ventas.routes.js"
+import { connectMongoDB } from "./DB/config.js"
 //traer nuestras variables de entorno
-dotenv.config()
+dotenv.config({ path: '.env' })
+
+//conectar a la base de datos
+await connectMongoDB()
 
 //crear instancia
 const app = express();

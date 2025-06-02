@@ -8,9 +8,9 @@ export const renderCardsCarro = (data) => {
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${data.nombre}</h5>
-                            <p class="card-text text-start">${data.desc}</p>
+                            <p class="card-text text-start">${data.descripcion}</p>
                             <p class="card-text"><small>${data.genero}</small></p>
-                            <p class="card-text"><small>${data.calif}</small></p>
+                            <p class="card-text"><small>${data.calificacion}</small></p>
                             <p class="card-text"><small>$${data.precio}</small></p> 
                         </div>
                     </div>

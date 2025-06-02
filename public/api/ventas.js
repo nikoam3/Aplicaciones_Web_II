@@ -1,46 +1,58 @@
 import { API_VENTAS } from "./api.js"
 
+export const loadVentasByIdUser = async (id) => {
+    try {
+        const response = await fetch(`${API_VENTAS}/detailByIdUser/${id}`)
+        if (!response.ok) {
+            throw new Error(`Error en middleware ${response.status}: ${await response.text()}`);
+        }
+        const data = await response.json();
+        if (data.message && data.message.includes('error')) {
+            throw new Error(`Error en controler: ${data.message}`);
+        }
+        return data
+    } catch (error) {
+        console.error('Error al obtener ventas por ID:', error.message);
+        throw error;
+    }
+}
+
 export const loadVentas = async () => {
     try {
-        const ventas = await fetch(`${API_VENTAS}/all`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then((response) => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('Network response es no OK')
-            }
-        }).catch(error => {
-            console.error('Problema con el fetch', error)
-        })
-        return ventas
+        const response = await fetch(`${API_VENTAS}/all`)
+        if (!response.ok) {
+            throw new Error(`Error en middleware ${response.status}: ${await response.text()}`);
+        }
+        const data = await response.json();
+        if (data.message && data.message.includes('error')) {
+            throw new Error(`Error en controler: ${data.message}`);
+        }
+        return data
     } catch (error) {
-        console.error('Error al cargar las ventas:', error);
+        console.error('Error al cargar todas las ventas:', error.message);
+        throw error;
     }
 }
 
 export const addVentas = async (venta) => {
     try {
         const response = await fetch(`${API_VENTAS}/add`, {
-            method: 'PUT',
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(venta),
-        }).then((response) => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('Network response es no OK')
-            }
-        }).catch(error => {
-            console.error('Problema con el fetch', error)
         })
-        return response
+        if (!response.ok) {
+            throw new Error(`Error en middleware ${response.status}: ${await response.text()}`);
+        }
+        const data = await response.json();
+        if (data.message && data.message.includes('error')) {
+            throw new Error(`Error en controler: ${data.message}`);
+        }
+        return data
     } catch (error) {
-        console.error('Error al agregar el producto:', error);
+        console.error('Error al cargar venta:', error.message);
+        throw error;
     }
 }

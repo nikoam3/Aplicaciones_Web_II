@@ -1,26 +1,17 @@
-export const addCompraOk = (compraOk) => {
-    localStorage.setItem('compraOk', JSON.stringify(compraOk));
+export const addSession = (token, user) => {
+    sessionStorage.setItem('token', JSON.stringify(token));
+    sessionStorage.setItem('usuario', JSON.stringify(user));
 }
 
-export const getCompraOk = () => {
-    const compraOk = localStorage.getItem('compraOk');
-    return compraOk ? JSON.parse(compraOk) : null;
-}
-export const addCarrito = (carrito) => {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+export const getToken = async () => {
+    return sessionStorage.getItem('token');
 }
 
-export const getCarrito = () => {
-    const carrito = localStorage.getItem('carrito');
-    return carrito ? JSON.parse(carrito) : null;
+export const getUserDetails = async () => {
+    return JSON.parse(sessionStorage.getItem('usuario'));
 }
 
-export const addSession = (user) => {
-    sessionStorage.setItem('user', JSON.stringify(user));
+export const logout = () => {
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('usuario');
 }
-
-export const getSession = () => {
-    const user = sessionStorage.getItem('user');
-    return user ? JSON.parse(user) : null;
-}
-

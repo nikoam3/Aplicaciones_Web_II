@@ -1,50 +1,42 @@
 [
   {
-    "id": 1,
     "nombre": "Ana",
-    "apellido": "Gómez",
+    "apellido": "Gomez",
     "email": "ana.gomez@example.com",
-    "contraseña": "123",
-    "direccion": "Calle siempre viva 123, Ciudad"
+    "direccion": "Cualquiera.com",
+    "contraseña": "cargar una manualmente por el uso de bcryptjs",
+    "telefono": "1234567890"
   },
   {
-    "id": 2,
     "nombre": "Carlos",
     "apellido": "Pérez",
     "email": "carlos.perez@example.com",
-    "contraseña": "456",
-    "direccion": "Avenida Siempre Viva 456, Pueblo"
+    "direccion": "Avenida Siempre Viva 456, Pueblo",
+    "contraseña": "cargar una manualmente por el uso de bcryptjs",
+    "telefono": "1234567890"
   },
   {
-    "id": 3,
     "nombre": "María",
     "apellido": "López",
     "email": "maria.lopez@example.com",
-    "contraseña": "789",
-    "direccion": "Calle Luna 789, Capital"
+    "direccion": "Calle Luna 789, Capital",
+    "contraseña": "cargar una manualmente por el uso de bcryptjs",
+    "telefono": "1234567890"
   },
   {
-    "id": 4,
     "nombre": "Juan",
     "apellido": "Martínez",
     "email": "juan.martinez@example.com",
-    "contraseña": "1011",
-    "direccion": "Calle Sol 101, Ciudad"
+    "direccion": "Calle Sol 101, Ciudad",
+    "contraseña": "cargar una manualmente por el uso de bcryptjs",
+    "telefono": "1234567890"
   },
   {
-    "id": 5,
     "nombre": "Sofía",
     "apellido": "Rodríguez",
     "email": "sofia.rodriguez@example.com",
-    "contraseña": "1213",
-    "direccion": "Calle Estrella 202, Pueblo"
-  },
-  {
-    "id": 6,
-    "nombre": "Pepito",
-    "apellido": "Juarez",
-    "email": "pepijua@example.com",
-    "contraseña": "1415",
-    "direccion": "Calle Sin Salida 202, Pueblo"
+    "direccion": "Calle Estrella 202, Pueblo",
+    "contraseña": "cargar una manualmente por el uso de bcryptjs",
+    "telefono": "1234567890"
   }
 ]

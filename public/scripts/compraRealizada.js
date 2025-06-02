@@ -1,11 +1,11 @@
 import { renderCompraRealizada } from "../components/compraRealizada.js";
-import { getSession } from "../utils/sessionStorage.js";
-import { getCompraOk, getCarrito } from "../utils/sessionStorage.js";
+import { getUserDetails } from "../utils/sessionStorage.js";
+import { getCompraOk, getCarrito } from "../utils/localStorage.js";
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const compraOk = getCompraOk()
-    const infoUser = getSession()
+    const infoUser = await getUserDetails()
     const carrito = getCarrito()
     const resumenCompra = document.getElementById('resumenCompra')
     resumenCompra.innerHTML += renderCompraRealizada(compraOk, carrito, infoUser)

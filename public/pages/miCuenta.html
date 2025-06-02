@@ -18,51 +18,50 @@
     <main>
         <div class="d-flex justify-content-center align-items-center flex-column">
             <section>
-                <h2>Información del Usuario</h2>
-                <div id="user-info">
-                    <p><strong>Nombre:</strong> <span id="userName"></span></p>
-                    <p><strong>Apellido:</strong> <span id="userLastname"></span></p>
-                    <p><strong>Email:</strong> <span id="userEmail"></span></p>
-                    <p><strong>Dirección:</strong> <span id="userAddress"></span></p>
-                </div>
-            </section>
-            <section>
-                <h2 class="m-2">Modificar Información</h2>
+                <h2 class="m-2">Información del Usuario</h2>
                 <form class="row d-flex justify-content-center align-items-center flex-column"
                     id="formModificarUsuario">
                     <div class="col-md-10">
-                        <label for="newNombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="newNombre" value="" required>
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control bg-dark text-light" id="nombre" value="" required
+                            disabled>
                     </div>
                     <div class="col-md-10">
-                        <label for="newApellido" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="newApellido" value="" required>
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control bg-dark text-light" id="apellido" value="" required
+                            disabled>
                     </div>
                     <div class="col-md-10">
                         <label for="validationCustomUsername" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="newEmail" value="" required>
+                        <input type="email" class="form-control bg-dark text-light" id="email" value="" required
+                            disabled>
                     </div>
                     <div class="col-md-10">
-                        <label for="newDireccion" class="form-label">Direccion</label>
-                        <input type="text" class="form-control" id="newDireccion" required>
+                        <label for="direccion" class="form-label">Direccion</label>
+                        <input type="text" class="form-control bg-dark text-light" id="direccion" required disabled>
+                    </div>
+                    <div class="col-md-10">
+                        <label for="telefono" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control bg-dark text-light" id="telefono" required disabled>
                     </div>
                     <div class="col-md-10 m-3">
-                        <button class="btn btn-primary" type="submit" id="botonActualizarUsuario">Actualizar</button>
+                        <button class="btn btn-success me-3" type="button" id="botonEditar">Editar</button>
+                        <button class="btn btn-primary ms-3" type="button" id="botonGuardar" disabled>Guardar</button>
                     </div>
+
                 </form>
             </section>
-        </div>
-        <div id="alertaModificarUsuario">
+            <div id="alertaModificarUsuario">
 
+            </div>
         </div>
-
     </main>
     <footer>
         <p>&copy; 2025 Mi Aplicación Web</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="../controller/miCuenta.js"></script>
-    <script type="module" src="../controller/navbar.js"></script>
+    <script type="module" src="../scripts/miCuenta.js"></script>
+    <script type="module" src="../scripts/navbar.js"></script>
 </body>
 
 </html>

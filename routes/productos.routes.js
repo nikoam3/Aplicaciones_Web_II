@@ -1,164 +1,37 @@
 import { Router } from "express"
 import {
     get_productos_all, get_productos_by_id,
-    get_productos_by_price, get_productos_by_digital,
+    get_productos_by_price,
     get_productos_by_genero, add_producto,
-    delete_producto, update_productos,
+    delete_producto,
     get_productos_by_calificacion
-} from '../utils/productos.utils.js'
+} from '../controllers/productos.controller.js'
 
+import {
+    validarProductoById, validarProductoPrecio,
+    validarProductoGenero, validarProductoCalificacion,
+    validarProductoAdd
+} from '../middleware/productos.middleware.js'
 const router = Router()
 
-router.get('/all', async (req, res) => {
-    try {
-        const productos = await get_productos_all()
-        if (productos.length) {
-            res.status(200).json(productos)
-        } else {
-            res.status(400).json("Productos no encontrados")
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//devuelve todos los productos del json
+router.get('/all', get_productos_all)
 
-router.get('/byId/:id', async (req, res) => {
-    const id = req.params.id
-    try {
-        const producto = await get_productos_by_id(id)
-        if (producto) {
-            res.status(200).json(producto)
-        } else {
-            res.status(400).json(`Producto con ${id} no encontrado`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//devuelve el producto o indice por id 
+router.get('/byId/:_id', validarProductoById, get_productos_by_id)
 
-router.post('/precio', async (req, res) => {
-    const precio = req.body.precio
-    try {
-        const productos = await get_productos_by_price(precio)
-        if (productos.length) {
-            res.status(200).json(productos)
-        } else {
-            res.status(400).json(`No se encuentran productos por debajo del precio $ ${precio}`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//devuelve los productos que estén por debajo o igual de un precio
+router.get('/precio/:precio', validarProductoPrecio, get_productos_by_price)
 
-router.post('/digital', async (req, res) => {
-    const digital = req.body.esDigital
-    try {
-        const productos = await get_productos_by_digital(digital)
-        if (productos.length) {
-            res.status(200).json(productos)
-        } else {
-            res.status(400).json(`${digital} valor incorrecto, solo se acepta true o false.`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//devuelvo los productos por genero
+router.get('/genero/:genero', validarProductoGenero, get_productos_by_genero)
 
-router.post('/genero', async (req, res) => {
-    const genero = req.body.genero
-    try {
-        const productos = await get_productos_by_genero(genero)
-        if (productos.length) {
-            res.status(200).json(productos)
-        } else {
-            res.status(400).json(`Género incorrecto.`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//devuelvo los productos por calificacion
+router.get('/calificacion/:calificacion', validarProductoCalificacion, get_productos_by_calificacion)
 
-router.post('/calificacion', async (req, res) => {
-    const calificacion = req.body.calificacion
-    try {
-        const productos = await get_productos_by_calificacion(calificacion)
-        if (productos.length) {
-            res.status(200).json(productos)
-        } else {
-            res.status(400).json(`Género incorrecto.`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+//agrera un producto
+router.post('/add', validarProductoAdd, add_producto)
 
-router.put('/update/:id', async (req, res) => {
-    const id = req.params.id
-    const { nombre, desc, precio, imagen, esDigital, genero, calif } = req.body
-
-
-    const newProducto = {
-        nombre: nombre,
-        desc: desc,
-        precio: precio,
-        imagen: imagen,
-        esDigital: esDigital,
-        genero: genero,
-        calif: calif
-    }
-
-    try {
-        const index = await get_productos_by_id(id, true)
-        if (index != -1) {
-            await update_productos(newProducto, index)
-            res.status(200).json(`Producto ${nombre} modificado correctamente`)
-        } else {
-            res.status(400).json(`Error al agregar nuevo producto`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
-
-router.post('/add', async (req, res) => {
-    const { id, nombre, desc, precio, imagen, esDigital, genero, calif } = req.body
-
-    const newProducto = {
-        id: id,
-        nombre: nombre,
-        desc: desc,
-        precio: precio,
-        imagen: imagen,
-        esDigital: esDigital,
-        genero: genero,
-        calif: calif
-    }
-
-    try {
-        if (newId) {
-            await add_producto(newProducto)
-            res.status(200).json(`Producto ${nombre} agregado correctamente`)
-        } else {
-            res.status(400).json(`Error al agregar nuevo producto`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
-
-router.delete('/delete/:id', async (req, res) => {
-    const id = req.params.id
-    try {
-        const index = await get_productos_by_id(id, true)
-        if (index != -1) {
-            await delete_producto(index)
-            res.status(200).json(`${id} eliminado correctamente`)
-        } else {
-            res.status(400).json(`Id: ${id} no encontrado`)
-        }
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-})
+router.delete('/delete/:_id', validarProductoById, delete_producto)
 
 export default router

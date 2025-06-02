@@ -1,233 +1,41 @@
 [
   {
-    "id": 1,
-    "id_usuario": 3,
-    "fecha": "2025-03-15",
+    "_id": "6832a229e6810ca864285c5a",
+    "id_usuario": "683141f05b43f6a6330e5609",
     "total": 28.49,
     "direccion": "Calle Falsa 123, Ciudad",
     "completada": true,
     "productos": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ]
+      "682be684838eba1c5f624525",
+      "682be684838eba1c5f624526"
+    ],
+    "fecha": "2025-05-25T04:52:57.745Z",
+    "__v": 0
   },
   {
-    "id": 2,
-    "id_usuario": 1,
-    "fecha": "2025-03-20",
-    "total": 9.99,
-    "direccion": "Avenida Siempre Viva 456, Pueblo",
-    "completada": true,
-    "productos": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "id_usuario": 2,
-    "fecha": "2025-04-01",
-    "total": 19.75,
-    "direccion": "Calle Luna 789, Capital",
-    "completada": false,
-    "productos": [
-      {
-        "id": 4
-      },
-      {
-        "id": 5
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "id_usuario": 5,
-    "fecha": "2025-04-02",
-    "total": 12.5,
-    "direccion": "No especificada",
-    "completada": true,
-    "productos": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      },
-      {
-        "id": 3
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "id_usuario": 1,
-    "fecha": "2025-03-15",
-    "total": 28.49,
-    "direccion": "Calle Falsa 123, Ciudad",
-    "completada": true,
-    "productos": [
-      {
-        "id": 2
-      },
-      {
-        "id": 3
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "id_usuario": 4,
-    "fecha": "2025-04-15",
-    "total": 11,
+    "_id": "6832a2ace6810ca864285c62",
+    "id_usuario": "683141f05b43f6a6330e5609",
+    "total": 45,
     "direccion": "Calle Falsa 123, Ciudad",
     "completada": false,
     "productos": [
-      {
-        "id": 2
-      },
-      {
-        "id": 1
-      },
-      {
-        "id": 3
-      }
-    ]
+      "682be684838eba1c5f624527",
+      "682be684838eba1c5f624528",
+      "682be684838eba1c5f624529"
+    ],
+    "fecha": "2025-05-25T04:55:08.891Z",
+    "__v": 0
   },
   {
-    "id": 6,
-    "id_usuario": 1,
-    "fecha": "2025-05-02T19:22:34.020Z",
-    "total": 5,
+    "_id": "6832a2d5e6810ca864285c66",
+    "id_usuario": "683141f05b43f6a6330e5609",
+    "total": 45,
     "direccion": "Calle Falsa 123, Ciudad",
     "completada": false,
     "productos": [
-      {
-        "id": 11
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "id_usuario": 1,
-    "fecha": "2025-05-02T19:23:59.082Z",
-    "total": 40.5,
-    "direccion": "Calle Falsa 123, Ciudad",
-    "completada": false,
-    "productos": [
-      {
-        "id": 16
-      },
-      {
-        "id": 18
-      },
-      {
-        "id": 17
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "id_usuario": 1,
-    "fecha": "2025-05-02T19:25:48.135Z",
-    "total": 40.5,
-    "direccion": "Calle Falsa 123, Ciudad",
-    "completada": false,
-    "productos": [
-      {
-        "id": 16
-      },
-      {
-        "id": 17
-      },
-      {
-        "id": 18
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "id_usuario": 1,
-    "fecha": "2025-05-06T00:54:22.087Z",
-    "total": "72",
-    "direccion": "Calle Falsa 123, Ciudad",
-    "completada": false,
-    "productos": [
-      {
-        "id": 2
-      },
-      {
-        "id": 3
-      },
-      {
-        "id": 1
-      },
-      {
-        "id": 18
-      },
-      {
-        "id": 19
-      },
-      {
-        "id": 17
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "id_usuario": 1,
-    "fecha": "2025-05-06T00:59:14.140Z",
-    "total": "41",
-    "direccion": "Calle Falsa 123, Ciudad",
-    "completada": false,
-    "productos": [
-      {
-        "id": 16
-      },
-      {
-        "id": 17
-      },
-      {
-        "id": 9
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "fecha": "2025-05-14T13:44:40.972Z",
-    "total": "28",
-    "direccion": "Cervantes 564",
-    "completada": false,
-    "productos": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "id_usuario": 1,
-    "fecha": "2025-05-14T13:51:47.034Z",
-    "total": "28",
-    "direccion": "Cervantes 564",
-    "completada": false,
-    "productos": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      }
-    ]
+      "682be684838eba1c5f62452c"
+    ],
+    "fecha": "2025-05-25T04:55:49.227Z",
+    "__v": 0
   }
 ]
