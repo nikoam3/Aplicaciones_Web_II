@@ -7,24 +7,29 @@ import ventasRouter from "./routes/ventas.routes.js"
 import { connectMongoDB } from "./DB/config.js"
 //traer nuestras variables de entorno
 dotenv.config({ path: '.env' })
-
-//conectar a la base de datos
-await connectMongoDB()
+const port = process.env.PORT
 
 //crear instancia
 const app = express();
-const port = process.env.PORT
+
 app.use(express.json())
 app.use(cors())
-
-//levantar nuestro front
-app.use(express.static('./public'))
-
-//levantar el servidor
-app.listen(port, () => {
-})
 
 //rutas endpoint
 app.use('/usuarios', usuariosRouter)
 app.use('/ventas', ventasRouter)
 app.use('/productos', productosRouter)
+
+//levantar nuestro front
+app.use(express.static('./public'))
+
+await connectMongoDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Servidor corriendo en http://localhost:${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error("Error al conectar a MongoDB Atlas:", err);
+    process.exit(1); // Detiene la app si la conexión falla
+  });

@@ -1,32 +1,16 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Productos from "./models/productos.models.js";
-import Usuarios from "./models/usuarios.models.js";
-import Ventas from "./models/ventas.models.js";
 
 dotenv.config({ path: ".env" });
 
 const MONGODB_URI = process.env.MONGODB_URI
-
-let cached = global.mongoose || { conn: null, promise: null };
-
+console.log("URI de MongoDB:", MONGODB_URI);
 export const connectMongoDB = async () => {
-    if (!MONGODB_URI) {
-        throw new Error("No se ha definido la URI de MongoDB");
+    try {
+        await mongoose.connect(MONGODB_URI, {});
+        console.log("Conectado al clúster de MongoDB Atlas");
+    } catch (error) {
+        console.error("Error al conectar a MongoDB Atlas:", error);
+        throw error; // Lanza el error para que se maneje en index.js
     }
-    if (cached.conn) {
-        return cached.conn;
-    }
-    cached.promise = cached.promise || await mongoose.connect(MONGODB_URI, {
-        dbName: "AWII",
-        bufferCommands: false,
-    })
-    //inicializo los models si no están inicializados
-    Productos();
-    Usuarios();
-    Ventas();
-
-    cached.conn = await cached.promise;
-
-    return cached.conn;
-}
+};

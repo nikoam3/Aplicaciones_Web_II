@@ -1,0 +1,26 @@
+[{
+  "_id": {
+    "$oid": "6838a98c4ed17dea817acf27"
+  },
+  "id_usuario": {
+    "$oid": "68375825036b1a25c5414d3d"
+  },
+  "total": 39,
+  "direccion": "Cualquuiera.com",
+  "completada": false,
+  "productos": [
+    {
+      "$oid": "682be684838eba1c5f62452d"
+    },
+    {
+      "$oid": "682be684838eba1c5f624530"
+    },
+    {
+      "$oid": "682be684838eba1c5f624534"
+    }
+  ],
+  "fecha": {
+    "$date": "2025-05-29T18:38:04.973Z"
+  },
+  "__v": 0
+}]

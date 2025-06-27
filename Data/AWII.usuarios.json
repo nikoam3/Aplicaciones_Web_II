@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "68375825036b1a25c5414d3d"
+  },
+  "nombre": "Ana",
+  "apellido": "Gomez",
+  "direccion": "Cualquuiera.com",
+  "email": "ana.gomez@example.com",
+  "telefono": "12345268",
+  "contraseña": "$2b$10$zcLn.KqPBhIVId9Qy1BEVOMfGaLevGLzwXGEepIgW/uLqBycAJsK6",
+  "fechaCreado": {
+    "$date": "2025-05-28T18:38:29.931Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68375834036b1a25c5414d3f"
+  },
+  "nombre": "Nico",
+  "apellido": "Amaya",
+  "direccion": "Cualquuiera.com",
+  "email": "nico.amaya@example.com",
+  "telefono": "1234526789",
+  "contraseña": "$2b$10$EioehNLD6uzAWQfPrVQGKuvw.abKiQtSaCqw5XP1TMYgy5K08NWta",
+  "fechaCreado": {
+    "$date": "2025-05-28T18:38:44.670Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685dbc6efcc946639931cd60"
+  },
+  "nombre": "Greta",
+  "apellido": "Amaya",
+  "direccion": "sin direccon",
+  "email": "greta@gmail.com",
+  "telefono": "11111111",
+  "contraseña": "$2b$10$vVZzikmbD22ZFttLoBFJvuz4TAuU3TyiJHI36MpKKvTXIi4wvgDAO",
+  "fechaCreado": {
+    "$date": "2025-06-26T21:32:30.356Z"
+  },
+  "__v": 0
+}]
