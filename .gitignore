@@ -4,3 +4,6 @@ node_modules/
 package-lock.json
 # variables de entorno
 .env
+# BBDD de prueba
+Data/
+data.json

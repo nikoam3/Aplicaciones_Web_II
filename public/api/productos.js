@@ -17,6 +17,23 @@ export const loadProducts = async () => {
     }
 }
 
+export const productosSearch = async (nombre) => {
+    try {
+        const response = await fetch(`${API_PRODUCTOS}/search/${nombre}`);
+        if (!response.ok) {
+            throw new Error(`Error en middleware ${response.status}: ${await response.text()}`);
+        }
+        const data = await response.json();
+        if (data.message && data.message.includes('error')) {
+            throw new Error(`Error en controler: ${data.message}`);
+        }
+        return data
+    } catch (error) {
+        console.error('Error al buscar todos los productos:', error.message);
+        throw error;
+    }
+}
+
 export const get_genero = async (genero) => {
     try {
         const response = await fetch(`${API_PRODUCTOS}/genero/${genero}`)

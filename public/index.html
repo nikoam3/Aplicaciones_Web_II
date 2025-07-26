@@ -7,59 +7,99 @@
     <meta name="description" content="Proyecto Aplicaciones Web II">
     <title>Proyecto AWII</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check-circle-fill" viewBox="0 0 16 16">
-            <path
-                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-        </symbol>
-        <symbol id="info-fill" viewBox="0 0 16 16">
-            <path
-                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-        </symbol>
-        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
-            <path
-                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-        </symbol>
-    </svg>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark text-light m-5 text-center">
+    <div id="navbar">
+
+    </div>
     <header>
         <h1>Bienvenido al Proyecto AWII</h1>
     </header>
-    <main>
-        <p>Este es el inicio de tu proyecto.</p>
 
-        <div class="d-inline-flex flex-column align-items-center m-5 bg-black --bs-bg-opacity: 0.5;">
-            <p class="">Inicio de sesion</p>
-            <div class="col-sm-10 m-2">
-                <input type="text" class="form-control" id="inputUserName" placeholder="Email" aria-label="Email">
-            </div>
-            <div class="col-sm-10 m-2">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"
-                    aria-label="Contraseña">
-            </div>
-            <div class="col-sm-10 m-2">
-                <p class="text-light"> ¿No tienes cuenta? </br><a href="./pages/crearUsuario.html">Crear cuenta</a></p>
-                <button class="btn btn-primary w-100" id="loginButton">Iniciar Sesión</button>
-            </div>
+    <main class="container my-5 bg-dark text-light">
 
-            <div id="alertLogin" class="col-sm-10">
+        <div class="container mt-4">
+            <h2>Buscar Películas</h2>
+            <form id="searchForm" class="d-flex mb-4">
+                <input class="form-control me-2" type="search" id="searchNombre" name="searchNombre"
+                    placeholder="Buscar por nombre (ej. El Padrino)" aria-label="Buscar">
 
+                <div class="d-flex">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseWidthExample" aria-expanded="false"
+                        aria-controls="collapseWidthExample">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-funnel" viewBox="0 0 16 16">
+                            <path
+                                d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="mb-4 p-3 bg-dark text-light rounded">
+                    <h4 class="m-4">Filtrar Películas</h4>
+                    <form id="filterForm" class="row g-3">
+                        <div class="col-md-4" id="filterGenero">
+
+                        </div>
+                        <div class="col-md-4" id="filterCalificacion">
+
+                        </div>
+                        <div class="col-md-4">
+                            <label for="filterPrecio" class="form-label">Precio Máximo</label>
+                            <input type="number" id="filterPrecio" class="form-control" placeholder="Ej: 50">
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-primary" id="aplicarFiltros">Aplicar Filtros</button>
+                            <button type="reset" class="btn btn-secondary" id="limpiarFiltros">Limpiar Filtros</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Género</th>
+                    <th scope="col">Calificación</th>
+                    <th scope="col">Precio</th>
+                    <th><input class="form-check-input" type="checkbox" id="selectAll" value=""
+                            aria-label="Seleccionar todos"></th>
+                </tr>
+            </thead>
+            <tbody id="tableProductos">
+
+            </tbody>
+        </table>
+        <div id="alertaCarritoVacio">
+        </div>
+        <div class="gap-4 d-md-flex justify-content-md-center">
+            <button class="btn btn-success" type="button" id="botonAgregarCarrito">Agregar
+                a Carrito
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                </svg>
+            </button>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Proyecto AWII. Todos los derechos reservados.</p>
+    <footer class="bg-dark text-center py-4">
+        <p>&copy; 2025 Mi Sitio. Todos los derechos reservados.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-    <script type="module" src="./scripts/index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/home.js"></script>
+    <script type="module" src="./scripts/navbar.js"></script>
 </body>
 
 </html>

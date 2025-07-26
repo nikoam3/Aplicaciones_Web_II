@@ -123,5 +123,26 @@ export const delete_producto = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 }
+export const search_productos_by_name = async (req, res) => {
+    try {
+        const nombre = req.params.nombre
+        const query = {};
 
-
+        // Búsqueda por nombre (parcial, insensible a mayúsculas)
+        if (nombre) {
+            query.nombre = { $regex: nombre, $options: "i" };
+        }
+        const productos = await Productos.find(query);
+        if (productos.length) {
+            return res.status(200).json(productos);
+        } else {
+            return res.status(404).json({ message: `No se encontró el producto con nombre ${nombre}` });
+        }
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            const messages = Object.values(error.errors).map(err => err.message);
+            return res.status(400).json({ message: 'Datos inválidos', errors: messages });
+        }
+        return res.status(500).json({ message: error.message });
+    }
+}

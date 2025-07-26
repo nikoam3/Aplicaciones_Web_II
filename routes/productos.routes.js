@@ -4,7 +4,8 @@ import {
     get_productos_by_price,
     get_productos_by_genero, add_producto,
     delete_producto,
-    get_productos_by_calificacion
+    get_productos_by_calificacion,
+    search_productos_by_name
 } from '../controllers/productos.controller.js'
 
 import {
@@ -32,6 +33,10 @@ router.get('/calificacion/:calificacion', validarProductoCalificacion, get_produ
 //agrera un producto
 router.post('/add', validarProductoAdd, add_producto)
 
+//elimina un producto por id
 router.delete('/delete/:_id', validarProductoById, delete_producto)
+
+//buscador de productos por nombre
+router.get("/search/:nombre", search_productos_by_name)
 
 export default router

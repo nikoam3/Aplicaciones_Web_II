@@ -4,7 +4,7 @@ import { addCarrito } from "../utils/localStorage.js";
 import { renderProductos } from "../components/loadProductos.js";
 import { modalFiltroCalificacion, modalFiltroGenero } from "../components/modelFiltros.js";
 import { alert } from "../components/alerts.js";
-import { loadProducts } from "../api/productos.js";
+import { loadProducts, productosSearch } from "../api/productos.js";
 
 const modalFilterGenero = document.getElementById('filterGenero')
 const modalFilterCalificacion = document.getElementById('filterCalificacion')
@@ -72,11 +72,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const loadUser = async () => {
     const user = await getUserDetails();
-    if (!user) {
-        window.location.href = '../index.html';
+    if (user) {
+        const userNameElement = document.getElementById('userName');
+        userNameElement.textContent = `Bienvenido ${user.nombre} ${user.apellido}`;
     }
-    const userNameElement = document.getElementById('userName');
-    userNameElement.textContent = `Bienvenido ${user.nombre} ${user.apellido}`;
 }
 
 const loadProductosTable = (data) => {
@@ -96,3 +95,14 @@ const setFilters = (allProductos) => {
     modalFilterGenero.innerHTML = modalFiltroGenero(arrayUniqueGenero)
     modalFilterCalificacion.innerHTML = modalFiltroCalificacion(arrayUniqueCalificacion)
 }
+
+document.getElementById("searchForm").addEventListener("input", async (e) => {
+    const searchInput = document.getElementById("searchNombre").value;
+    if (searchInput) {
+        let productSearch = await productosSearch(searchInput);
+        loadProductosTable(productSearch);
+    }
+    else {
+        loadProductosTable(await loadProducts());
+    }
+});
