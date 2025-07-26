@@ -95,3 +95,18 @@ export const validarProductoCalificacion = [
     next();
   },
 ];
+
+export const validarSearch = [
+  param("nombre")
+    .optional()
+    .isString().withMessage("El nombre debe ser una cadena")
+    .trim() //eliminar los espacios en blanco al inicio y al final
+    .matches(/^[a-zA-Z0-9\s]*$/).withMessage("El nombre solo puede contener letras, números y espacios"),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ message: 'Datos inválidos', errors: errors.array() });
+    }
+    next();
+  },
+];
