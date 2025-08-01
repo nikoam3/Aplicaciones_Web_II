@@ -5,14 +5,20 @@ import {
     get_productos_by_genero, add_producto,
     delete_producto,
     get_productos_by_calificacion,
-    search_productos_by_name
+    search_productos_by_name,
+    add_valoracion_product
 } from '../controllers/productos.controller.js'
 
 import {
     validarProductoById, validarProductoPrecio,
     validarProductoGenero, validarProductoCalificacion,
-    validarProductoAdd
+    validarProductoAdd, validarSearch, validarValoracion
 } from '../middleware/productos.middleware.js'
+
+import {
+    verifyToken
+} from '../middleware/usuarios.middleware.js'
+
 const router = Router()
 
 //devuelve todos los productos del json
@@ -37,6 +43,9 @@ router.post('/add', validarProductoAdd, add_producto)
 router.delete('/delete/:_id', validarProductoById, delete_producto)
 
 //buscador de productos por nombre
-router.get("/search/:nombre", search_productos_by_name)
+router.get("/search/:nombre", validarSearch, search_productos_by_name)
+
+//agregar una valoración a un producto
+router.post("/:_id/valoraciones", validarValoracion, validarProductoById, add_valoracion_product)
 
 export default router

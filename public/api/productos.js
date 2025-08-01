@@ -34,6 +34,30 @@ export const productosSearch = async (nombre) => {
     }
 }
 
+
+export const addValoracion = async (_id, body) => {
+    try {
+        const response = await fetch(`${API_PRODUCTOS}/${_id}/valoraciones`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        })
+        if (!response.ok) {
+            throw new Error(`Error en middleware ${response.status}: ${await response.text()}`);
+        }
+        const data = await response.json();
+        if (data.message && data.message.includes('error')) {
+            throw new Error(`Error en controller: ${data.message}`);
+        }
+        return data
+    } catch (error) {
+        console.error('Error al enviar valoración:', error.message);
+        throw error;
+    }
+}
+
 export const get_genero = async (genero) => {
     try {
         const response = await fetch(`${API_PRODUCTOS}/genero/${genero}`)

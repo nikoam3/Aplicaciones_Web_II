@@ -11,13 +11,13 @@ export const renderNavbar = (user) => {
                 <ul class="navbar-nav">
                 ${user ? `
                     <li class="nav-item">
-                        <a class="nav-link" href="./miCuenta.html">Mi cuenta</a>
+                        <a class="nav-link" href="${window.location.origin}/public/pages/miCuenta.html">Mi cuenta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./historialCompras.html">Historial Compras</a>
+                        <a class="nav-link" href="${window.location.origin}/public/pages/historialCompras.html">Historial Compras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./contacto.html">Contacto</a>
+                        <a class="nav-link" href="${window.location.origin}/public/pages/contacto.html">Contacto</a>
                     </li> 
                     <div class="ms-auto">
                         <button id="logoutBtn" class="btn btn-outline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -27,10 +27,10 @@ export const renderNavbar = (user) => {
                     </div>`
                     : 
                     `<li class="nav-item">
-                            <a class="nav-link" href="./pages/acceder.html">Acceder</a>
+                            <a class="nav-link" href="${window.location.origin}/public/pages/acceder.html">Iniciar Sesión</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./pages/crearUsuario.html">Crear Cuenta</a>
+                            <a class="nav-link" href="${window.location.origin}/public/pages/crearUsuario.html">Crear Cuenta</a>
                     </ul>`}
                 </ul>
             

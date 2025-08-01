@@ -53,7 +53,7 @@ export const get_detail_by_id_user_ventas = async (req, res) => {
     try {
         const venta = await Ventas.find({ id_usuario: req.params._id })
             .populate('id_usuario', 'nombre') // Poblar usuario, solo _id, nombre, email
-            .populate('productos', 'nombre'); // Poblar ventas, solo _id, nombre, precio
+            .populate('productos', 'nombre imagen precio valoraciones') 
         if (!venta) {
             return res.status(404).json({ message: `No se encontró la venta con ID ${req.params._id}` });
         }

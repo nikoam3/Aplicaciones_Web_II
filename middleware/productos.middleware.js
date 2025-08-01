@@ -110,3 +110,15 @@ export const validarSearch = [
     next();
   },
 ];
+
+export const validarValoracion = [
+  body("puntuacion")
+    .isInt({ min: 0, max: 5 }).withMessage("La puntuación debe ser un número entero entre 0 y 5"),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({message: 'Datos invádilos', errors: errors.array() });
+    }
+    next();
+  },
+];

@@ -1,20 +1,22 @@
 import { addVentas, loadVentas } from "../api/ventas.js";
 import { renderCardsCarro } from "../components/cardsCarro.js";
-import { getCarrito, addCompraOk } from "../utils/localStorage.js";
+import { getCarrito, addCompraOk} from "../utils/localStorage.js";
 import { getUserDetails } from "../utils/sessionStorage.js";
 import { alert } from "../components/alerts.js";
+import { get_producto } from "../api/productos.js";
 
 document.addEventListener('DOMContentLoaded', (e) => {
     const cardsCarro = document.getElementById('cardsCarro')
     const precioTotalHTML = document.getElementById('precioTotal')
     const productosCarro = getCarrito()
-    let precioTotal = 0
+    let totalCompra = 0
 
-    productosCarro.forEach(producto => {
-        cardsCarro.innerHTML += renderCardsCarro(producto)
-        precioTotal += producto.precio
+    productosCarro.forEach(async producto => {
+        let productoDetails = await get_producto(producto._id)
+        cardsCarro.innerHTML += renderCardsCarro(productoDetails)
+        totalCompra += parseFloat(producto.precio)
+        precioTotalHTML.innerHTML = totalCompra.toFixed(2)
     })
-    precioTotalHTML.innerHTML = Math.round(parseFloat(precioTotal, 2))
 })
 
 document.getElementById('botonComprar').addEventListener('click', async (e) => {

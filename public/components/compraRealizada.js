@@ -1,7 +1,7 @@
 export const renderCompraRealizada = (compraOk, carrito, infoUser) => {
     return `
         <div class="container mt-5 border">
-                <h3 class="alert-heading">¡Muchas gracias ${infoUser.nombre} por la confiar en nosotros!</h3>
+                <h3 class="alert-heading">¡Muchas gracias ${infoUser.nombre} por confiar en nosotros!</h3>
                 <p>Tu pedido ha sido procesado y se enviará a la dirección proporcionada.</p>
                 <div class="d-flex flex-direction-column justify-content-evenly align-items-center">
                     <div class="text-start">

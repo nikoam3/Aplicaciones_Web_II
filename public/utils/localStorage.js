@@ -15,3 +15,10 @@ export const getCarrito = () => {
     return carrito ? JSON.parse(carrito) : null;
 }
 
+export const clearCarrito = () => {
+    localStorage.removeItem('carrito');
+}
+
+export const clearCompraOk = () => {
+    localStorage.removeItem('compraOk');
+}

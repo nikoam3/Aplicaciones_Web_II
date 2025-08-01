@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Proyecto Aplicaciones Web II">
+    <link rel="stylesheet" href="../styles.css">
     <title>Proyecto AWII</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -24,42 +25,47 @@
     </svg>
 </head>
 
-<body class="bg-dark text-light m-5 text-center">
+<body class="bg-dark m-5 text-center">
     <main>
-
-        <div class="d-inline-flex flex-column align-items-center m-3 bg-black --bs-bg-opacity: 0.5;">
-            <p class="">Crear Usuario</p>
-            <form class="" id="formAddUsuario">
-
-                <div class="col-m-10 m-3">
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" aria-label="Nombre">
+        <div id="navbar">
+        </div>
+        <div class="register-container">
+            <h2 class="text-center mb-4">Crear Cuenta</h2>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label for="registerNombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="registerNombre" name="nombre" required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido" aria-label="Apellido">
+                <div class="mb-3">
+                    <label for="registerApellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="registerApellido" name="apellido" required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="text" class="form-control" id="direccion" placeholder="Dirección"
-                        aria-label="Dirección">
+                <div class="mb-3">
+                    <label for="registerDireccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="registerDireccion" name="direccion" required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="text" class="form-control" id="telefono" placeholder="Teléfono" aria-label="Teléfono">
+                <div class="mb-3">
+                    <label for="registerTelefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="registerTelefono" name="telefono" required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="text" class="form-control" id="inputUserName" placeholder="Email" aria-label="Email">
+                <div class="mb-3">
+                    <label for="registerEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="registerEmail" name="email" required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"
-                        aria-label="Contraseña">
+                <div class="mb-3">
+                    <label for="registerPassword" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="registerPassword" name="password" minlength="3"
+                        required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <input type="password" class="form-control" id="inputPasswordRepet" placeholder="Repetir Contraseña"
-                        aria-label="Repetir Contraseña">
+                <div class="mb-3">
+                    <label for="registerPasswordConfirm" class="form-label">Repetir Contraseña</label>
+                    <input type="password" class="form-control" id="registerPasswordConfirm" name="passwordConfirm"
+                        required>
                 </div>
-                <div class="col-m-10 m-3">
-                    <button class="btn btn-primary w-100" id="crearUsuario" type="button">Crear Usuario</button>
-                </div>
+                <button type="submit" class="btn btn-custom w-100" id="buttonCrearCuenta">Crear Cuenta</button>
             </form>
-            <div id="alertCrearUsuario" class="m-2" hidden>
+            <p class="text-center mt-3">¿Ya tienes cuenta? <a href="./acceder.html">Iniciar sesión</a></p>
+            <div id="alertCrearUsuario">
 
             </div>
         </div>
@@ -73,6 +79,7 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
     <script type="module" src="../scripts/crearUsuario.js"></script>
+    <script type="module" src="../scripts/navbar.js"></script>
 </body>
 
 </html>

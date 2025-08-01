@@ -11,6 +11,7 @@ export const renderCardsCarro = (data) => {
                             <p class="card-text text-start">${data.descripcion}</p>
                             <p class="card-text"><small>${data.genero}</small></p>
                             <p class="card-text"><small>${data.calificacion}</small></p>
+                            <p class="card-text"><small>${data.promedioValoraciones} ★</small></p>
                             <p class="card-text"><small>$${data.precio}</small></p> 
                         </div>
                     </div>

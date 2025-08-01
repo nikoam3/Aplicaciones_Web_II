@@ -20,9 +20,8 @@ export const get_productos_all = async (req, res) => {
 export const get_productos_by_id = async (req, res) => {
     try {
         const producto = await Productos.findById(req.params._id)
-
-        if (producto.length) {
-            return res.status(200).json(...producto)
+        if (producto) {
+            return res.status(200).json(producto)
         } else {
             return res.status(404).json({ message: `No se encuentra ID ${req.params._id}` })
         }
@@ -146,3 +145,43 @@ export const search_productos_by_name = async (req, res) => {
         return res.status(500).json({ message: error.message });
     }
 }
+
+// Nuevo endpoint para añadir valoraciones
+export const add_valoracion_product = async (req, res) => {
+    try {
+        const { puntuacion, userId } = req.body;
+
+        const producto = await Productos.findById(req.params._id);
+        if (!producto) {
+            return res.status(404).json({ error: "Producto no encontrado" });
+        }
+        const yaCalificado = producto.valoraciones.some(v => v.id_usuario.toString() === userId);
+        if (yaCalificado) {
+            return res.status(400).json({ error: "Ya has calificado este producto" });
+        }
+        // Añadir valoración
+        producto.valoraciones.push({
+            id_usuario: userId,
+            puntuacion: Number(puntuacion)
+        });
+
+        res.status(201).json({
+            message: "Valoración añadida",
+            producto: {
+                _id: producto._id,
+                nombre: producto.nombre,
+                promedioValoraciones: producto.promedioValoraciones,
+                valoraciones: producto.valoraciones,
+            },
+        });
+        // Actualizar promedio
+        await producto.actualizarPromedio();
+
+    } catch (error) {
+        if (error.name === 'ValidationError') {
+            const messages = Object.values(error.errors).map(err => err.message);
+            return res.status(400).json({ message: 'Datos inválidos', errors: messages });
+        }
+        return res.status(500).json({ message: error.message });
+    }
+};

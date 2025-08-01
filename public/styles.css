@@ -1,0 +1,104 @@
+    .login-container {
+        max-width: 400px;
+        margin: 5rem auto;
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #buttonIniciarSesion {
+        background-color: #007bff;
+        color: white;
+    }
+
+    #buttonIniciarSesion:hover {
+        background-color: #0056b3;
+    }
+
+    .register-container {
+        max-width: 500px;
+        margin: 5rem auto;
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #buttonCrearCuenta {
+        background-color: #28a745;
+        color: white;
+    }
+
+    #buttonCrearCuenta:hover {
+        background-color: #218838;
+    }
+
+    .star-filled {
+        color: gold;
+    }
+
+    .star-empty {
+        color: gray;
+    }
+
+    .card-img-top {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .historial-container {
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+
+    .card-img-small {
+        width: 50px;
+        height: 75px;
+        object-fit: cover;
+    }
+
+    .star-filled {
+        color: gold;
+    }
+
+    .star-empty {
+        color: gray;
+    }
+
+    .valoracion-form {
+        display: none;
+    }
+
+    .valoracion-form.active {
+        display: block;
+    }
+
+    .rating {
+        font-size: 2em;
+        color: #ccc;
+        display: inline-block;
+        direction: ltr;
+    }
+
+    .rating .star {
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .rating .star.selected {
+        color: gold;
+    }
+
+    .product-rating {
+        border: 1px solid #eee;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .product-rating p {
+        margin: 0;
+        font-size: 0.6em;
+    }

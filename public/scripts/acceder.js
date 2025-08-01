@@ -2,10 +2,11 @@ import { addSession } from "../utils/sessionStorage.js";
 import { auth } from "../auth/auth.js";
 import { alert } from "../components/alerts.js";
 
-const button = document.getElementById('loginButton');
+const button = document.getElementById('buttonIniciarSesion');
 const alertLogin = document.getElementById('alertLogin');
 
-button.addEventListener('click', async () => {
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); 
     const email = document.getElementById('inputUserName').value;
     const pass = document.getElementById('inputPassword').value;
 
@@ -18,9 +19,9 @@ button.addEventListener('click', async () => {
         try {
             const userLogin = await auth(credenciales);
             if (userLogin) {
-                alert('Login correcto!');
+                alert('Login correcto!', 'success');
                 addSession(userLogin.token, userLogin.usuario);
-                window.location.href = './pages/home.html';
+                window.location.href = `${window.location.origin}/public/index.html`;
             } else {
                 alertLogin.innerHTML = alert('Contraseña o email incorrectos', 'danger')
             }

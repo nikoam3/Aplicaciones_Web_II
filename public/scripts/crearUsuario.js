@@ -1,20 +1,16 @@
 import { addUsuario } from "../api/usuarios.js";
 import { alert } from "../components/alerts.js";
 
-const nombreInput = document.getElementById("nombre");
-const apellidoInput = document.getElementById("apellido");
-const emailInput = document.getElementById("inputUserName");
-const telefonoInput = document.getElementById("telefono");
-const passwordInput = document.getElementById("inputPassword");
-const direccionInput = document.getElementById("direccion");
-const passwordInputRepet = document.getElementById("inputPasswordRepet");
+const nombreInput = document.getElementById("registerNombre");
+const apellidoInput = document.getElementById("registerApellido");
+const emailInput = document.getElementById("registerEmail");
+const telefonoInput = document.getElementById("registerTelefono");
+const passwordInput = document.getElementById("registerPassword");
+const direccionInput = document.getElementById("registerDireccion");
+const passwordInputRepet = document.getElementById("registerPasswordConfirm");
 const alertCrearUsuarioHTML = document.getElementById('alertCrearUsuario')
 
-document.getElementById("formAddUsuario").addEventListener("submit", async (event) => {
-    event.preventDefault();
-});
-
-document.getElementById("crearUsuario").addEventListener("click", async (e) => {
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     try {
         const nombre = nombreInput.value
@@ -51,7 +47,7 @@ document.getElementById("crearUsuario").addEventListener("click", async (e) => {
                     <br> Será redirigido en ${segundos}`, 'success')
                 segundos--;
                 if (segundos <= 0) {
-                    window.location.href = '/public/index.html';
+                    window.location.href = '../index.html';
                 }
             }, 1000);
         }

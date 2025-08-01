@@ -5,10 +5,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const user = await getUserDetails();
     const navbar = document.getElementById('navbar')
     navbar.innerHTML += renderNavbar(user)
-    document.getElementById('logoutBtn').addEventListener('click', (e) => {
-        sessionStorage.removeItem('token')
-        window.location.href = '../index.html'
-    })
+    if (user) {
+        document.getElementById('logoutBtn').addEventListener('click', (e) => {
+            sessionStorage.removeItem('token')
+            sessionStorage.removeItem('usuario')
+            window.location.href = `${window.location.origin}/public/index.html`;
+        })
+    }
 })
 
 
