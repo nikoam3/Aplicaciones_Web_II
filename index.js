@@ -24,12 +24,9 @@ app.use('/productos', productosRouter)
 app.use(express.static('./public'))
 
 await connectMongoDB()
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Servidor corriendo en http://localhost:${port}`);
-    });
-  })
-  .catch((err) => {
+  .then(() => 
+    console.log(`Servidor corriendo en http://localhost:${port}`)
+    ).catch((err) => {
     console.error("Error al conectar a MongoDB Atlas:", err);
     process.exit(1); // Detiene la app si la conexión falla
   });
