@@ -7,7 +7,7 @@ import ventasRouter from "./routes/ventas.routes.js"
 import { connectMongoDB } from "./DB/config.js"
 //traer nuestras variables de entorno
 dotenv.config({ path: '.env' })
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 
 //crear instancia
 const app = express();
