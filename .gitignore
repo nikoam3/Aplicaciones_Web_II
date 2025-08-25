@@ -7,3 +7,4 @@ package-lock.json
 # BBDD de prueba
 Data/
 data.json
+.vercel
