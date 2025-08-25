@@ -7,7 +7,6 @@ import ventasRouter from "./routes/ventas.routes.js"
 import { connectMongoDB } from "./DB/config.js"
 //traer nuestras variables de entorno
 dotenv.config({ path: '.env' })
-const port = process.env.PORT || 3000;
 
 //crear instancia
 const app = express();
@@ -25,7 +24,7 @@ app.use(express.static('./public'))
 
 await connectMongoDB()
   .then(() => 
-    console.log(`Servidor corriendo en http://localhost:${port}`)
+    console.log(`Servidor corriendo}`)
     ).catch((err) => {
     console.error("Error al conectar a MongoDB Atlas:", err);
     process.exit(1); // Detiene la app si la conexión falla
