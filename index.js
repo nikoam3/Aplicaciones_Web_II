@@ -5,6 +5,7 @@ import productosRouter from "./routes/productos.routes.js"
 import usuariosRouter from "./routes/usuarios.routes.js"
 import ventasRouter from "./routes/ventas.routes.js"
 import mongoose from "mongoose";
+import http from "http";
 import { connectMongoDB } from "./DB/config.js"
 //traer nuestras variables de entorno
 dotenv.config({ path: '.env' })
@@ -24,7 +25,7 @@ app.use('/productos', productosRouter)
 app.use(express.static('./public'))
 // Iniciar el servidor
 const PORT = process.env.PORT || 3000;  
-
+const server = http.createServer(app);
 /*app.listen(PORT, async () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
   try {
@@ -43,7 +44,7 @@ const PORT = process.env.PORT || 3000;
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
   console.log("Mongodb connected");
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
   });
 }).catch((err) => {
