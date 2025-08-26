@@ -73,13 +73,18 @@ const showCarrito = async () => {
     const user = await getUserDetails();
     if (!user) {
         const cartTotal = document.getElementById('cartTotal')
+        const noLogin = document.getElementById('noLogin')
+        noLogin.innerHTML = `<p class="text-danger">Debe iniciar sesión para ver el carrito!</p>`
         cartTotal.innerText = `Total: $0.00`;
+        document.getElementById('clearCart').hidden = true;
         document.getElementById('confirmCompra').hidden = true;
     }
     else {
         const cart = getCarrito()
         const cartItems = document.getElementById('cartItems');
         const cartTotal = document.getElementById('cartTotal')
+        document.getElementById('noLogin').hidden = true;
+        document.getElementById('clearCart').hidden = false;
         document.getElementById('confirmCompra').hidden = false;
         let total = 0;
         cartItems.innerHTML = ''
