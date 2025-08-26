@@ -1,3 +1,3 @@
-export const API_PRODUCTOS = 'https://aplicacioneswebii-nikoam3s-projects.vercel.app/productos'
-export const API_VENTAS = 'https://aplicacioneswebii-nikoam3s-projects.vercel.app/ventas'
-export const API_USUARIOS = 'https://aplicacioneswebii-nikoam3s-projects.vercel.app/usuarios'
+export const API_PRODUCTOS = 'https://awii-backend-production.up.railway.app/productos'
+export const API_VENTAS = 'https://awii-backend-production.up.railway.app/ventas'
+export const API_USUARIOS = 'https://awii-backend-production.up.railway.app/usuarios'
