@@ -42,11 +42,6 @@
         color: gray;
     }
 
-    .card-img-top {
-        height: 300px;
-        object-fit: cover;
-    }
-
     .historial-container {
         max-width: 800px;
         margin: 2rem auto;
@@ -101,4 +96,72 @@
     .product-rating p {
         margin: 0;
         font-size: 0.6em;
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .navbar {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .nav-link {
+        transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+        color: #e50914 !important;
+    }
+
+    /* Estilos generales */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        background: linear-gradient(45deg, #099fe5, #2b67c0, #2c3e50, #1a1a1a);
+        background-size: 400%;
+        animation: gradientAnimation 15s ease infinite;
+        min-height: 500px;
+    }
+    .body .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Overlay para legibilidad */
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Animaciones para texto */
+    .animate__animated {
+        animation-duration: 1s;
     }

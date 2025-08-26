@@ -10,7 +10,7 @@ export const renderProductos = (p) => {
                   <img src="${p.imagen || 'https://via.placeholder.com/300x200?text=Sin+Imagen'}" class="card-img-top"
                       alt="${p.nombre}">
 
-                  <div class="card-body bg-dark text-light" id="card-body">
+                  <div class="card-body" id="card-body">
                       <h5 class="card-title">${p.nombre}</h5>
                       <p class="card-text">
                           <strong>Género:</strong> ${p.genero}<br>

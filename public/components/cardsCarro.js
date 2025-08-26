@@ -1,6 +1,6 @@
 export const renderCardsCarro = (data) => {
     return `
-        <div class="card mb-3 bg-dark text-light" style="max-width: 540px;">
+        <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="${data.imagen}" class="img-fluid rounded-start" alt="${data.nombre}">
