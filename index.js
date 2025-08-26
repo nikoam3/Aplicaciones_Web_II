@@ -22,11 +22,13 @@ app.use('/productos', productosRouter)
 //levantar nuestro front
 app.use(express.static('./public'))
 // Iniciar el servidor
-const PORT = process.env.PORT || 3000; // Puerto dinámico para Vercel
+const PORT = process.env.PORT || 3000; 
+const MONGODB_URI = process.env.MONGODB_URI
+
 app.listen(PORT, async () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
   try {
-    await connectMongoDB()
+    await connectMongoDB(MONGODB_URI)
       .then(() =>
         console.log(`Servidor corriendo en el puerto ${PORT} y conectado a MongoDB Atlas`)
       ).catch((err) => {

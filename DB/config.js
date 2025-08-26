@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 
-dotenv.config({ path: ".env" });
-
-const MONGODB_URI = process.env.MONGODB_URI
-export const connectMongoDB = async () => {
+export const connectMongoDB = async (MONGODB_URI) => {
     try {
         await mongoose.connect(MONGODB_URI, {});
         console.log("Conectado al clúster de MongoDB Atlas");
