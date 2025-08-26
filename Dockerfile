@@ -1,5 +1,5 @@
 # Usa una imagen base de Node.js (elige la versión que coincida con tu proyecto, e.g., 18-alpine es ligera)
-FROM node:18-alpine
+FROM node:22-alpine
 
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install --production
 COPY . .
 
 # Expone el puerto donde corre tu app (usa process.env.PORT o fallback a 3000)
-EXPOSE 3000
+EXPOSE 8080
 
 # Comando para correr la app (usa el script "start" de package.json)
 CMD ["npm", "start"]
