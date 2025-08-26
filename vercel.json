@@ -12,7 +12,7 @@
   ],
   "routes": [
     {
-      "src": "/(productos|usuarios|ventas)/(.*)",
+      "src": "/(.*)",
       "dest": "/index.js"
     },
     {
