@@ -21,11 +21,20 @@ app.use('/productos', productosRouter)
 
 //levantar nuestro front
 app.use(express.static('./public'))
-
-await connectMongoDB()
-  .then(() => 
-    console.log(`Servidor corriendo}`)
-    ).catch((err) => {
+// Iniciar el servidor
+const PORT = process.env.PORT || 3000; // Puerto dinámico para Vercel
+app.listen(PORT, async () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+  try {
+    await connectMongoDB()
+      .then(() =>
+        console.log(`Servidor corriendo en el puerto ${PORT} y conectado a MongoDB Atlas`)
+      ).catch((err) => {
+        console.error("Error al conectar a MongoDB Atlas:", err);
+        process.exit(1); // Detiene la app si la conexión falla
+      });
+  } catch (err) {
     console.error("Error al conectar a MongoDB Atlas:", err);
-    process.exit(1); // Detiene la app si la conexión falla
-  });
+    process.exit(1);
+  }
+});
