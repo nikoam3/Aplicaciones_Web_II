@@ -48,8 +48,4 @@ router.get("/search/:nombre", validarSearch, search_productos_by_name)
 //agregar una valoración a un producto
 router.post("/:_id/valoraciones", validarValoracion, validarProductoById, add_valoracion_product)
 
-//test para ver si el backend funciona
-router.get('/test', (req, res) => {
-  res.json({ message: "Backend funcionando" });
-});
 export default router
